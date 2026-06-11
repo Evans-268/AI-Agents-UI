@@ -1,0 +1,163 @@
+[
+  { 
+    "id": 1, 
+    "name": "Portable SSD V-Gen", 
+    "price": "Rp. 1.750.000",  
+    "rating": 4.8,
+    "text": "Portable SSD dengan kecepatan tinggi",
+    "image": "static/data/Product/Portable SSD V-Gen Platinum.jpg",
+    "description": "Portable SSD dengan kecepatan tinggi, cocok untuk gaming, editing video, backup data besar, dan transfer file cepat." 
+  },
+  { 
+    "id": 2, 
+    "name": "Sata 3 V-Gen 256 GB", 
+    "price": "Rp. 1.250.000",  
+    "rating": 4.6,
+    "image": "static/data/Product/Sata 3 V-Gen 256 GB.jpg",
+    "description": "SSD V-Gen 256GB SATA III adalah solid state drive internal 2.5 inci yang dirancang untuk meningkatkan kecepatan komputer/laptop. Varian Platinum/Rescue menawarkan kecepatan baca hingga 530 MB/s dan tulis hingga 477 MB/s."
+  },
+  { 
+    "id": 3, 
+    "name": "Portable SSD Samsung", 
+    "price": "Rp. 1.325.000", 
+    "rating": 4.7,
+    "image": "static/data/Product/Portable SSD Samsung.jpg",
+    "description": "Portable SSD Samsung adalah solusi penyimpanan eksternal berperforma tinggi, ringkas, dan andal, yang menggunakan teknologi solid-state untuk kecepatan transfer data cepat (hingga 2.000 MB/s pada model T9) serta daya tahan lebih tinggi dibandingkan HDD konvensional."
+  },
+  { 
+    "id": 4, 
+    "name": "Earphone Realme Buds Air 7 Pro", 
+    "price": "Rp. 975.000", 
+    "rating": 4.6,
+    "image": "static/data/Product/Airphone Realme Buds Air 7 Pro.webp",
+    "description": "Realme Buds Air 7 Pro adalah TWS in-ear premium yang rilis tahun 2025 dengan fitur unggulan ANC 53dB, driver ganda (11mm+6mm), dan AI Live Translator."
+  },
+  { 
+    "id": 5, 
+    "name": "SAMSUNG Watch 10 Pro", 
+    "price": "Rp. 875.000", 
+    "rating": 4.8,
+    "image": "static/data/Product/SAMSUNG Watch 10 Pro.jpeg",
+    "description": "Samsung Watch 10 Pro (atau sering disebut 10 Pro Max) adalah smartwatch yang dirancang dengan layar AMOLED 2.2-2.3 inci beresolusi tinggi, fitur Bluetooth calling, dan ketahanan air."
+  },
+  { 
+    "id": 6, 
+    "name": "SAPHIRE Portable SSD 256 GB", 
+    "price": "Rp. 775.000", 
+    "rating": 4.2,
+    "image": "static/data/Product/SAPHIRE PORTABLE SSD 256 GB.jpeg",
+    "description": "SSD RX7 Sapphire Portable 256GB adalah perangkat penyimpanan eksternal ringkas dengan kecepatan baca hingga 550MB/s dan tulis 500MB/s, menggunakan antarmuka USB 3.2 Type-C."
+  },
+  { 
+    "id": 7, 
+    "name": "Earphone Smart Screen Active Noise Reduction", 
+    "price": "Rp. 650.000", 
+    "rating": 4.4,
+    "image": "static/data/Product/Earphone Smart Screen Active Noise Reduction.jpeg",
+    "description": "Earphone Bluetooth 5.4 yang dilengkapi layar sentuh LCD berwarna pada casing pengisi daya untuk kontrol langsung, ANC (Active Noise Cancellation) + ENC (Environmental Noise Cancelling), dan baterai 30mAH per earbud untuk pemutaran sekitar 4,5 jam"
+  },
+  { 
+    "id": 8, 
+    "name": "HONYAN MAN", 
+    "price": "Rp. 150.000", 
+    "rating": 4.6,
+    "image": "static/data/Product/HONYAN MAN.jpg",
+    "description": "Honyan Man adalah lini produk aksesori pria, terutama dompet dan tas, yang dikenal dengan desain simpel, elegan, dan material kulit PU premium serta kanvas berkualitas."
+  },
+  { 
+    "id": 9, 
+    "name": "Apple iPad (A16), Wi-Fi", 
+    "price": "Rp. 1.525.000", 
+    "rating": 4.5,
+    "image": "static/data/Product/Apple iPad (A16), Wi-Fi.jpg",
+    "description": "Apple iPad (Generasi ke-11 / A16 Chip) adalah tablet Wi-Fi 11-inci yang dirilis tahun 2025 dengan chip A16 Bionic yang kencang, layar Liquid Retina tajam, dan port USB-C."
+  },
+  { 
+    "id": 10, 
+    "name": "Laptop HP ProBook Amazon 450", 
+    "price": "Rp. 15.250.000", 
+    "rating": 3.8,
+    "image": "static/data/Product/Laptop HP Amazon.jpg",
+    "description": "HP ProBook 450 adalah lini laptop bisnis 15,6 inci yang populer di Amazon, menawarkan keseimbangan antara performa dan portabilitas untuk produktivitas."
+  },
+  { 
+    "id": 11, 
+    "name": "Brankas Full Besi Baja Tebal", 
+    "price": "Rp. 1.525.000", 
+    "rating": 4.5,
+    "image": "static/data/Product/Brankas Full Besi Baja Tebal.jpeg",
+    "description": "Brankas full besi baja tebal adalah unit penyimpanan keamanan tinggi yang dirancang dari lembaran baja padat, sering kali dikombinasikan dengan material tahan api."
+  },
+  { 
+    "id": 12, 
+    "name": "Laptop MacBook Air", 
+    "price": "Rp. 10.250.000", 
+    "rating": 4.6,
+    "image": "static/data/Product/Laptop Macbook Air.jpg",
+    "description": "MacBook Air (model 2025/2026) adalah laptop ultra tipis dan ringan yang tersedia dalam ukuran 13 inci dan 15 inci, ditenagai oleh chip seri M Apple yang cepat (hingga M5) untuk performa tinggi."
+  },
+  { 
+    "id": 13, 
+    "name": "Laptop ASUS Vivobook 14", 
+    "price": "Rp. 7.850.000", 
+    "rating": 4.5,
+    "image": "static/data/Product/Laptop Asus Vivobook.jpg",
+    "description": "ASUS Vivobook 14 (A1404/M1405) adalah laptop 14-inci yang stylish, ringan (1.4kg - 1.5kg), dan andal untuk produktivitas harian, pelajar, atau pekerja kantoran"
+  },
+  { 
+    "id": 14, 
+    "name": "Laptop Acer Aspire 3", 
+    "price": "Rp. 8.250.000", 
+    "rating": 4.4,
+    "image": "static/data/Product/Laptop Acer Aspire.jpg",
+    "description": "Acer Aspire adalah seri laptop serbaguna dengan harga terjangkau hingga menengah yang dirancang untuk komputasi sehari-hari, pelajar, dan profesional, yang umumnya menampilkan Windows 11, prosesor Intel Core atau AMD Ryzen, dan desain ramping."
+  },
+  { 
+    "id": 15, 
+    "name": "Realme P3 5G", 
+    "price": "Rp. 3.500.000", 
+    "rating": 4.9,
+    "image": "static/data/Product/Realme P3 5G.jpeg",
+    "description": "Realme P3 5G adalah smartphone kelas menengah yang dirilis pada 2025 di Indonesia dengan fokus pada performa dan daya tahan, ditenagai chipset Snapdragon 6 Gen 4 5G, baterai jumbo 6000 mAh, dan layar AMOLED 120Hz."
+  },
+  { 
+    "id": 16, 
+    "name": "SAMSUNG Watch 12 Pro", 
+    "price": "Rp. 975.000", 
+    "rating": 4.8,
+    "image": "static/data/Product/SAMSUNG Watch 12 Pro.webp",
+    "description": "Samsung Watch 10 Pro (dan varian 10 Pro Max) adalah smartwatch terjangkau yang menonjolkan layar besar (hingga 2.3 inci HD AMOLED), fitur panggilan Bluetooth, dan daya tahan air, yang dipasarkan untuk aktivitas olahraga dan penggunaan harian dengan desain stylish."
+  },
+  { 
+    "id": 17, 
+    "name": "Keyboard Mouse Set Wireless Bluetooth", 
+    "price": "Rp. 125.000", 
+    "rating": 4.9,
+    "image": "static/data/Product/Keyboard Mouse Set Wireless Bluetooth.jpg",
+    "description": "Set keyboard dan mouse Bluetooth nirkabel ini adalah kombinasi ringkas dan portabel yang dirancang untuk kompatibilitas multi-perangkat, termasuk iOS, Android, Windows, dan macOS."
+  },
+  { 
+    "id": 18, 
+    "name": "Laptop Huawei", 
+    "price": "Rp. 19.250.000", 
+    "rating": 4.9,
+    "image": "static/data/Product/Laptop Huawei.jpg",
+    "description": "Laptop Huawei, khususnya seri MateBook, dikenal dengan desain ultra-tipis, bodi metal premium, dan performa tinggi untuk produktivitas."
+  },
+  { 
+    "id": 19, 
+    "name": "Laptop ASUS Vivobook 15", 
+    "price": "Rp. 7.850.000", 
+    "rating": 4.2,
+    "image": "static/data/Product/Laptop Asus.jpg",
+    "description": "ASUS Vivobook 15 adalah laptop harian 15,6 inci yang stylish dan serbaguna, ideal untuk produktivitas, pelajar, dan hiburan."
+  },
+  { 
+    "id": 20, 
+    "name": "Laptop MacBook Pro", 
+    "price": "Rp. 27.500.000", 
+    "rating": 4.9,
+    "image": "static/data/Product/Macbook apple.jpg",
+    "description": "MacBook Pro adalah lini laptop profesional premium dari Apple, yang dirancang untuk tugas-tugas berat seperti pengeditan video, pemrograman, dan desain grafis."
+  }
+]

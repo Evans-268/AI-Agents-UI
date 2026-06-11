@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": { "type": "integer" },
+      "name": { "type": "string" },
+      "price": { "type": "string" },
+      "rating": { "type": "number" },
+      "image": { "type": "string" },
+      "description": { "type": "string" },
+      "hidden": { "type": "boolean" },
+      "text": { "type": "string" }
+    },
+    "required": ["id", "name", "price", "image"]
+  }
+}

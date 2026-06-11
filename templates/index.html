@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Agents UI - Dark Mode</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+  
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='data/Product/ai-profile.png') }}">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=6">
+  
+  <link rel="stylesheet" href="{{ url_for('static', filename='mobile_style.css') }}?v=1">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='data/Product/ai-profile.png') }}" alt="Profil User" class="profile-pic">
+                <i class="fas fa-sparkles" style="color: #a8c7fa;"></i> AI Agents UI
+            </div>
+            <button class="icon-btn" id="toggleSidebarBtn" title="Tutup/Buka Sidebar">
+                <i class="bi bi-layout-sidebar"></i>
+            </button>
+        </div>
+        
+        <a href="/new_chat" class="btn-new-chat" title="Mulai obrolan baru">
+            <i class="fas fa-plus"></i> Percakapan baru
+        </a>
+        
+        {% if prefs %}
+        <div class="sidebar-section-title">Preferensi Terdeteksi</div>
+        <ul class="sidebar-menu pref-menu" style="margin-bottom: 20px;">
+            {% set merek_str = prefs.merek_favorit | join(', ') if prefs.merek_favorit else 'Belum ada' %}
+            {% set kategori_str = prefs.kategori_minat | join(', ') if prefs.kategori_minat else 'Belum ada' %}
+            {% set budget_str = prefs.budget if prefs.budget else 'Bebas' %}
+            {% set bahasa_str = prefs.bahasa_dominan if prefs.bahasa_dominan else 'Belum terdeteksi' %}
+            
+            <li title="Klik untuk melihat riwayat preferensi Merek" onclick="showPreferenceModal('Merek Favorit', `{{ merek_str }}`)">
+                <i class="fas fa-heart" style="color: #ff5252; width: 15px;"></i> 
+                <span style="font-size: 13px;">Merek: {{ merek_str }}</span>
+            </li>
+            <li title="Klik untuk melihat riwayat preferensi Kategori" onclick="showPreferenceModal('Kategori Minat', `{{ kategori_str }}`)">
+                <i class="fas fa-box" style="color: #a8c7fa; width: 15px;"></i> 
+                <span style="font-size: 13px;">Kategori: {{ kategori_str }}</span>
+            </li>
+            <li title="Klik untuk melihat riwayat preferensi Budget" onclick="showPreferenceModal('Budget', `{{ budget_str }}`)">
+                <i class="fas fa-wallet" style="color: #c4c7c5; width: 15px;"></i> 
+                <span style="font-size: 13px;">Budget: {{ budget_str }}</span>
+            </li>
+            <li title="Klik untuk melihat riwayat preferensi Bahasa" onclick="showPreferenceModal('Bahasa Dominan', `{{ bahasa_str }}`)">
+                <i class="fas fa-language" style="color: #4CAF50; width: 15px;"></i> 
+                <span style="font-size: 13px;">Bahasa: {{ bahasa_str }}</span>
+            </li>
+        </ul>
+        {% endif %}
+        <form action="/delete_multiple" method="POST" id="bulkDeleteForm" class="sidebar-form">
+            <div class="sidebar-section-title">Terbaru</div>
+            
+            <ul class="sidebar-menu">
+                {% if sessions|length == 0 %}
+                    <li class="empty-state">Belum ada obrolan</li>
+                {% endif %}
+
+                {% for session in sessions %}
+                    <li title="{{ session.title }}" class="{% if session.id == active_session_id %}active-session{% endif %}">
+                        <div class="sidebar-item-layout">
+                            <input type="checkbox" name="selected_chats" value="{{ session.id }}" class="chat-checkbox">
+                            
+                            <a href="/switch_chat/{{ session.id }}" class="sidebar-text" style="text-decoration: none; color: inherit; flex: 1;">
+                                <i class="far fa-comment-alt"></i> 
+                                <span>{{ session.title }}</span>
+                            </a>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+
+            {% if sessions|length > 0 %}
+                <button type="submit" class="btn-bulk-delete" title="Hapus obrolan terpilih">
+                    <i class="fas fa-trash-alt"></i> Hapus
+                </button>
+            {% endif %}
+        </form>
+
+        <div class="sidebar-footer">
+            <div class="user-profile" style="justify-content: space-between; width: 100%;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <img src="https://ui-avatars.com/api/?name={{ user_name }}&background=a8c7fa&color=131314" alt="Profil User" class="profile-pic">
+                    <span>{{ user_name }}</span>
+                </div>
+                
+                <div style="display: flex; gap: 15px;">
+                    <a href="/settings" title="Pengaturan Akun" style="color: var(--text-secondary); text-decoration: none;">
+                        <i class="fas fa-cog"></i>
+                    </a>
+                    
+                    <a href="/logout" title="Keluar dari akun" style="color: var(--danger); text-decoration: none;">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </aside>
+
+    <main class="main-content">
+        
+        <div class="mobile-top-bar">
+            <button class="icon-btn" id="openMobileSidebarBtn" title="Buka Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="logo">
+                <i class="fas fa-sparkles" style="color: #a8c7fa; margin-right: 8px;"></i>
+                <span style="font-weight: 500;">AI Agents UI</span>
+            </div>
+        </div>
+        <section class="content-area">
+            {% if chat_history|length == 0 and not error_msg %}
+                <div class="welcome-container">
+                    <div style="text-align: center; display: flex; flex-direction: column; align-items: center;"> 
+                        <h1 class="greeting-text">AI Agents UI selalu siap untuk anda</h1>
+                        
+                        <button type="button" 
+                                onclick="triggerSmartRecommendation(this)" 
+                                class="btn-new-chat" 
+                                style="margin-top: 20px; border: 1px solid var(--accent-color); background-color: rgba(168, 199, 250, 0.1); cursor: pointer; transition: all 0.3s ease;">
+                            <i class="fas fa-magic" style="color: var(--accent-color);"></i> Beri saya rekomendasi cerdas
+                        </button>
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if chat_history|length > 0 or error_msg %}
+            <div id="chat-history-container" class="chat-history-container">
+                
+                {% for chat in chat_history %}
+                    <div class="chat-wrapper user-wrapper">
+                        <div class="chat-message user-message">
+                            {% if chat.image %}
+                                <img src="data:{{ chat.image_mime or 'image/jpeg' }};base64,{{ chat.image }}" alt="User Upload" class="chat-img">
+                            {% endif %}
+                            {{ chat.user }}
+                        </div>
+                    </div>
+                    
+                    <div class="chat-wrapper ai-wrapper">
+                        
+                        <div class="chat-message ai-message">
+                            <div class="ai-content">{{ chat.ai | safe }}</div> 
+                            
+                            {% if chat.eval %}
+                            <div class="eval-metrics">
+                                <span title="Algoritma"><i class="fas fa-brain"></i> {{ chat.algo | capitalize }}</span>
+                                <span title="Latency"><i class="fas fa-stopwatch"></i> {{ chat.latency }}s</span>
+                                <span title="Token"><i class="fas fa-coins"></i> {{ chat.eval.total_tokens }}</span>
+                            </div>
+                            
+                            <div class="usability-feedback" style="margin-top: 12px; display: flex; gap: 10px; align-items: center;">
+                                <span style="font-size: 12px; color: var(--text-secondary);">Apakah jawaban ini membantu?</span>
+                                
+                                <button onclick="sendFeedback('{{ loop.index0 }}', 'up', this)" 
+                                        class="icon-btn feedback-btn {% if chat.usability_feedback == 'up' %}active-up{% endif %}" 
+                                        title="Membantu" 
+                                        style="width: 30px; height: 30px; font-size: 14px;">
+                                    <i class="fas fa-thumbs-up"></i>
+                                </button>
+                                
+                                <button onclick="sendFeedback('{{ loop.index0 }}', 'down', this)" 
+                                        class="icon-btn feedback-btn {% if chat.usability_feedback == 'down' %}active-down{% endif %}" 
+                                        title="Tidak Membantu" 
+                                        style="width: 30px; height: 30px; font-size: 14px;">
+                                    <i class="fas fa-thumbs-down"></i>
+                                </button>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+                
+                {% if error_msg %}
+                    <div class="chat-wrapper ai-wrapper">
+                        <img src="{{ url_for('static', filename='data/ai-profile.png') }}" class="ai-avatar" alt="AI Profile">
+                        
+                        <div class="chat-message ai-message">
+                            <span style='color: #ff8a8a;'>{{ error_msg }}</span>
+                        </div>
+                    </div>
+                {% endif %}
+                <div id="bottom-of-chat"></div>
+            </div>
+            {% endif %}
+        </section>
+
+        <footer class="footer-area">
+            
+            <form method="POST" action="/chat" class="chat-group" enctype="multipart/form-data" id="chatForm">
+                
+                <div id="chat_preview_container">
+                    <div class="preview-wrapper">
+                        <img id="chat_preview_img" src="" alt="Preview">
+                        <button type="button" id="remove_chat_img_btn" title="Hapus Gambar">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="input-row">
+                    <input type="file" name="user_image" id="file-upload" accept="image/*" style="display: none;">
+                    
+                    <label for="file-upload" class="icon-btn upload-icon" title="Unggah Gambar">
+                        <i class="fas fa-plus"></i>
+                    </label>
+
+                    <input type="text" name="message" id="messageInput" placeholder="Minta Agents..." required autocomplete="off" autofocus>
+                    
+                    <div class="custom-dropdown-container">
+                        <button type="button" class="dropdown-toggle-btn" id="aiModeBtn" title="Pengaturan AI">
+                            <span>Otomatis</span> <i class="fas fa-chevron-down" style="font-size: 10px; margin-left: 6px;"></i>
+                        </button>
+                        
+                        <div class="custom-dropdown-menu" id="aiModeMenu">
+                            <div class="dropdown-section">Sumber Data</div>
+                            <div class="dropdown-item active" data-type="source" data-value="auto">🌐 Otomatis</div>
+                            <div class="dropdown-item" data-type="source" data-value="json_lokal">📁 Lokal (JSON)</div>
+                            <div class="dropdown-item" data-type="source" data-value="web_scraping">🕷️ Web Scraping</div>
+                            
+                            <div class="dropdown-divider"></div>
+                            
+                            <div class="dropdown-section">Algoritma Respons</div>
+                            <div class="dropdown-item active" data-type="algo" data-value="auto" data-label="Otomatis">🧠 Otomatis</div>
+                            <div class="dropdown-item" data-type="algo" data-value="recommendation" data-label="Rekomendasi">🎯 Rekomendasi</div>
+                            <div class="dropdown-item" data-type="algo" data-value="comparative" data-label="Perbandingan">⚖️ Perbandingan</div>
+                            <div class="dropdown-item" data-type="algo" data-value="extractive" data-label="Spesifikasi">📋 Spesifikasi</div>
+                            <div class="dropdown-item" data-type="algo" data-value="abstractive" data-label="Ringkasan">📝 Ringkasan</div>
+                            <div class="dropdown-item" data-type="algo" data-value="general" data-label="Percakapan">💬 Percakapan Biasa</div>
+                        </div>
+                    </div>
+                    
+                    <input type="hidden" name="manual_source" id="hidden_manual_source" value="auto">
+                    <input type="hidden" name="manual_algo" id="hidden_manual_algo" value="auto">
+                    <button type="submit" class="icon-btn btn-send" id="sendBtn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+
+            </form>
+
+            <div class="footer-disclaimer">AI Agents UI dapat membuat kesalahan. Harap periksa kembali info penting.</div>
+        </footer>
+
+    </main>
+
+    <script src="{{ url_for('static', filename='app.js') }}?v=2"></script>
+    <script src="{{ url_for('static', filename='app_mobile.js') }}"></script>
+
+    <div id="prefModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="prefModalTitle">Judul Preferensi</h3>
+                <button class="icon-btn close-modal" onclick="closePreferenceModal()" title="Tutup">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="prefModalBody">
+                </div>
+        </div>
+    </div>
+    
+</body>
+</html>

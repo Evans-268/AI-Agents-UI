@@ -1,0 +1,9 @@
+Flask
+pytest
+openai
+python-dotenv
+jsonschema
+Pillow
+Markdown
+requests
+beautifulsoup4
