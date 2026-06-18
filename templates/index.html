@@ -11,7 +11,7 @@
 
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=6">
   
-  <link rel="stylesheet" href="{{ url_for('static', filename='mobile_style.css') }}?v=1">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='mobile_style.css') }}?v=1">
 </head>
 <body>
 
@@ -55,6 +55,20 @@
                 <span style="font-size: 13px;">Bahasa: {{ bahasa_str }}</span>
             </li>
         </ul>
+
+        <div id="prefModal" class="modal-overlay">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="prefModalTitle">Judul Preferensi</h3>
+                    <button class="icon-btn close-modal" onclick="closePreferenceModal()" title="Tutup">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body" id="prefModalBody">
+                </div>
+            </div>
+        </div>
+
         {% endif %}
         <form action="/delete_multiple" method="POST" id="bulkDeleteForm" class="sidebar-form">
             <div class="sidebar-section-title">Terbaru</div>
@@ -255,7 +269,7 @@
     </main>
 
     <script src="{{ url_for('static', filename='app.js') }}?v=2"></script>
-    <script src="{{ url_for('static', filename='app_mobile.js') }}"></script>
+    <script src="{{ url_for('static', filename='app_mobile.js?v=1') }}"></script>
 
     <div id="prefModal" class="modal-overlay">
         <div class="modal-content">

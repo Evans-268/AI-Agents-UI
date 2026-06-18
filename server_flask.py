@@ -78,7 +78,6 @@ def login():
         if email in users_db:
             user_data = users_db[email]
             
-            # Mendukung format data lama (string) dan format baru (dict)
             if isinstance(user_data, dict):
                 stored_password = user_data.get('password')
                 stored_name = user_data.get('name', email.split('@')[0].capitalize())
@@ -89,7 +88,7 @@ def login():
             if stored_password == password:
                 session['logged_in'] = True
                 session['user_email'] = email
-                session['user_name'] = stored_name  # Mengambil nama dari database
+                session['user_name'] = stored_name  
                 return redirect('/chat')
             else:
                 error = "Email atau password salah. Silakan coba lagi."
