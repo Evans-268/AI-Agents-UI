@@ -1,13 +1,14 @@
-# Mengabaikan file environment yang berisi API Keys rahasia
+# Mengabaikan file environment (berisi API Key OpenAI & Ngrok)
 .env
 
-# Mengabaikan folder cache Python
-__pycache__/
-*.pyc
-
-# Mengabaikan data lokal dan riwayat agar tidak tertimpa
+# Mengabaikan data lokal agar privasi user aman
 users.json
 chat_history.json
 
-# Mengabaikan cache testing
-.pytest_cache/
+# Mengabaikan folder virtual environment Python
+venv/
+env/
+
+# Mengabaikan file cache bawaan Python
+__pycache__/
+*.pyc
