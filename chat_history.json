@@ -1,5 +1,31 @@
 [
     {
+        "id": "11bafdfa-3d19-4c7c-bc13-574b30c3f0fa",
+        "title": "Tolong rekomendasikan lap...",
+        "messages": [
+            {
+                "user": "Tolong rekomendasikan laptop",
+                "ai": "<p>Berikut adalah rekomendasi laptop yang cocok untuk kamu:</p>\n<p><strong>1. Laptop HP ProBook Amazon 450</strong></p>\n<ul>\n    <li>Harga: Rp. 15.250.000</li>\n    <li>Rating: 3.8</li>\n    <li>Deskripsi: HP ProBook 450 adalah laptop bisnis 15,6 inci yang populer, menawarkan keseimbangan antara performa dan portabilitas untuk produktivitas.</li>\n</ul>\n<p><img src=\"/static/data/Product/Laptop HP Amazon.jpg\" alt=\"Laptop HP ProBook Amazon 450\" style=\"max-width: 250px; border-radius: 8px; display: block; margin: 15px 0 30px 0; border: 1px solid #ddd;\"></p>\n<p>\ud83d\udca1 <strong>Mengapa cocok untukmu</strong>: Laptop ini ideal untuk penggunaan bisnis dan produktivitas sehari-hari, dengan ukuran layar yang cukup besar untuk multitasking.</p>\n<p><strong>Kelebihan:</strong></p>\n<ul>\n    <li>Performa yang baik untuk tugas bisnis.</li>\n    <li>Desain yang profesional dan elegan.</li>\n    <li>Portabilitas yang baik untuk dibawa bepergian.</li>\n</ul>\n\n<p><strong>Kekurangan:</strong></p>\n<ul>\n    <li>Rating yang lebih rendah dibandingkan dengan beberapa model lain.</li>\n    <li>Harga yang cukup tinggi untuk segmen bisnis.</li>\n</ul>\n\n<hr />\n<p><strong>2. Laptop ASUS Vivobook 14</strong></p>\n<ul>\n    <li>Harga: Rp. 7.850.000</li>\n    <li>Rating: 4.5</li>\n    <li>Deskripsi: ASUS Vivobook 14 adalah laptop 14-inci yang stylish, ringan, dan andal untuk produktivitas harian, pelajar, atau pekerja kantoran.</li>\n</ul>\n<p><img src=\"/static/data/Product/Laptop Asus Vivobook.jpg\" alt=\"Laptop ASUS Vivobook 14\" style=\"max-width: 250px; border-radius: 8px; display: block; margin: 15px 0 30px 0; border: 1px solid #ddd;\"></p>\n<p>\ud83d\udca1 <strong>Mengapa cocok untukmu</strong>: Laptop ini menawarkan kombinasi performa dan desain yang menarik, cocok untuk pelajar dan pekerja kantoran.</p>\n<p><strong>Kelebihan:</strong></p>\n<ul>\n    <li>Ringan dan mudah dibawa.</li>\n    <li>Desain stylish yang menarik perhatian.</li>\n    <li>Performa yang cukup baik untuk tugas sehari-hari.</li>\n</ul>\n\n<p><strong>Kekurangan:</strong></p>\n<ul>\n    <li>Ukuran layar yang lebih kecil dibandingkan dengan model 15,6 inci.</li>\n    <li>Beberapa pengguna mungkin menginginkan spesifikasi yang lebih tinggi.</li>\n</ul>\n\n<hr />\n<p><strong>3. Laptop MacBook Air</strong></p>\n<ul>\n    <li>Harga: Rp. 10.250.000</li>\n    <li>Rating: 4.6</li>\n    <li>Deskripsi: MacBook Air adalah laptop ultra tipis dan ringan yang ditenagai oleh chip seri M Apple yang cepat untuk performa tinggi.</li>\n</ul>\n<p><img src=\"/static/data/Product/Laptop Macbook Air.jpg\" alt=\"Laptop MacBook Air\" style=\"max-width: 250px; border-radius: 8px; display: block; margin: 15px 0 30px 0; border: 1px solid #ddd;\"></p>\n<p>\ud83d\udca1 <strong>Mengapa cocok untukmu</strong>: MacBook Air adalah pilihan yang sangat baik untuk pengguna yang mencari performa tinggi dalam desain yang ringkas dan elegan.</p>\n<p><strong>Kelebihan:</strong></p>\n<ul>\n    <li>Performa tinggi dengan chip M Apple.</li>\n    <li>Desain ultra tipis dan ringan.</li>\n    <li>Ekosistem Apple yang terintegrasi dengan baik.</li>\n</ul>\n\n<p><strong>Kekurangan:</strong></p>\n<ul>\n    <li>Harga yang lebih tinggi dibandingkan laptop lain di kelasnya.</li>\n    <li>Kurangnya port yang lebih banyak dibandingkan dengan laptop Windows.</li>\n</ul>\n\n<hr />\n<p>Semoga rekomendasi ini membantu kamu dalam memilih laptop yang sesuai!</p>",
+                "image": "",
+                "image_mime": "",
+                "algo": "recommendation",
+                "latency": 28.39,
+                "eval": {
+                    "prompt_tokens": 28211,
+                    "completion_tokens": 888,
+                    "total_tokens": 29099
+                },
+                "usability_feedback": "up"
+            }
+        ],
+        "preferences": {
+            "merek_favorit": [],
+            "kategori_minat": [],
+            "budget": "Bebas",
+            "bahasa_dominan": "Indonesia"
+        }
+    },
+    {
         "id": "ba63020b-dd0c-4239-96b0-040087df3d25",
         "title": "carikan laptop",
         "messages": [
