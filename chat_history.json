@@ -1,5 +1,26 @@
 [
     {
+        "id": "91f4f8ee-2f08-40e2-a998-0835538ca6c9",
+        "title": "carikan portable",
+        "messages": [
+            {
+                "user": "carikan portable",
+                "ai": "Maaf, kendala teknis AI saat memproses. Pastikan API Key valid.",
+                "image": "",
+                "image_mime": "",
+                "algo": "general",
+                "latency": 0.43,
+                "eval": null
+            }
+        ],
+        "preferences": {
+            "merek_favorit": [],
+            "kategori_minat": [],
+            "budget": "Bebas",
+            "bahasa_dominan": "Indonesia"
+        }
+    },
+    {
         "id": "11bafdfa-3d19-4c7c-bc13-574b30c3f0fa",
         "title": "Tolong rekomendasikan lap...",
         "messages": [
