@@ -1,5 +1,6 @@
 # Mengabaikan file environment (berisi API Key OpenAI & Ngrok)
 .env
+nano .env
 
 # Mengabaikan data lokal agar privasi user aman
 users.json
