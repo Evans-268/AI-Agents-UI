@@ -1,5 +1,106 @@
 [
     {
+        "id": "b26709f6-bcdb-43b0-93d7-a9e7f076bcbe",
+        "title": "bandingkan Laptop MacBook...",
+        "messages": [
+            {
+                "user": "bandingkan Laptop MacBook Air dengan Laptop Huawei, mana yang lebih bagus",
+                "ai": "<p>Berikut adalah perbandingan antara <strong>Laptop MacBook Air</strong> dan <strong>Laptop Huawei</strong> berdasarkan data produk yang tersedia.</p>\n<table style=\"width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 14px;\">\n    <tr>\n        <th style=\"background-color: var(--bg-sidebar); border: 1px solid var(--hover-bg); padding: 10px; text-align: left; color: var(--accent-color);\">Spesifikasi</th>\n        <th style=\"background-color: var(--bg-sidebar); border: 1px solid var(--hover-bg); padding: 10px; text-align: left; color: var(--accent-color);\">Laptop MacBook Air</th>\n        <th style=\"background-color: var(--bg-sidebar); border: 1px solid var(--hover-bg); padding: 10px; text-align: left; color: var(--accent-color);\">Laptop Huawei</th>\n    </tr>\n    <tr>\n        <td style=\"border: 1px solid var(--hover-bg); padding: 10px; color: var(--text-primary);\">Harga</td>\n        <td style=\"border: 1px solid var(--hover-bg); padding: 10px; color: var(--text-primary);\">Rp. 10.250.000</td>\n        <td style=\"border: 1px solid var(--hover-bg); padding: 10px; color: var(--text-primary);\">Rp. 19.250.000</td>\n    </tr>\n    <tr>\n        <td style=\"border: 1px solid var(--hover-bg); padding: 10px; color: var(--text-primary);\">Rating</td>\n        <td style=\"border: 1px solid var(--hover-bg); padding: 10px; color: var(--text-primary);\">4.6</td>\n        <td style=\"border: 1px solid var(--hover-bg); padding: 10px; color: var(--text-primary);\">4.9</td>\n    </tr>\n    <tr>\n        <td style=\"border: 1px solid var(--hover-bg); padding: 10px; color: var(--text-primary);\">Deskripsi</td>\n        <td style=\"border: 1px solid var(--hover-bg); padding: 10px; color: var(--text-primary);\">Laptop ultra tipis dan ringan, ditenagai oleh chip M Apple.</td>\n        <td style=\"border: 1px solid var(--hover-bg); padding: 10px; color: var(--text-primary);\">Desain ultra-tipis, bodi metal premium, dan performa tinggi.</td>\n    </tr>\n</table>\n\n<h3>Kelebihan dan Kekurangan</h3>\n<p><strong>1. Laptop MacBook Air</strong></p>\n<ul>\n    <li><strong>Kelebihan:</strong></li>\n    <ul>\n        <li>Desain ultra tipis dan ringan.</li>\n        <li>Performa tinggi dengan chip M Apple.</li>\n        <li>Kualitas build yang sangat baik.</li>\n    </ul>\n    <li><strong>Kekurangan:</strong></li>\n    <ul>\n        <li>Harga lebih tinggi dibandingkan laptop lain di kelasnya.</li>\n        <li>Port terbatas (hanya USB-C).</li>\n    </ul>\n</ul>\n\n<p><strong>2. Laptop Huawei</strong></p>\n<ul>\n    <li><strong>Kelebihan:</strong></li>\n    <ul>\n        <li>Desain premium dengan bodi metal.</li>\n        <li>Performa tinggi untuk produktivitas.</li>\n        <li>Rating pengguna yang lebih tinggi.</li>\n    </ul>\n    <li><strong>Kekurangan:</strong></li>\n    <ul>\n        <li>Harga lebih mahal dibandingkan MacBook Air.</li>\n        <li>Kurang dikenal dibandingkan merek lain seperti Apple.</li>\n    </ul>\n</ul>\n\n<h3>Kesimpulan</h3>\n<p>Kedua laptop memiliki kelebihan dan kekurangan masing-masing. <strong>Laptop MacBook Air</strong> lebih unggul dalam desain dan performa chip, sedangkan <strong>Laptop Huawei</strong> menawarkan desain premium dengan rating pengguna yang lebih tinggi. Pilihan terbaik tergantung pada preferensi pengguna terkait merek dan fitur yang diinginkan.</p>",
+                "image": "",
+                "image_mime": "",
+                "algo": "comparative",
+                "latency": 12.59,
+                "eval": {
+                    "prompt_tokens": 28282,
+                    "completion_tokens": 918,
+                    "total_tokens": 29200
+                },
+                "usability_feedback": null
+            }
+        ],
+        "preferences": {
+            "merek_favorit": [
+                "Apple, Huawei"
+            ],
+            "kategori_minat": [
+                "Laptop"
+            ],
+            "budget": "Bebas",
+            "bahasa_dominan": "Indonesia"
+        }
+    },
+    {
+        "id": "2e7cc2d9-758f-42b0-9eaf-a50f372bd5ab",
+        "title": "recommend laptop",
+        "messages": [
+            {
+                "user": "recommend laptop",
+                "ai": "<p>Here are some laptop recommendations based on your interest:</p>\n<p><strong>1. Laptop HP ProBook Amazon 450</strong></p>\n<ul>\n    <li>Price: Rp. 15.250.000</li>\n    <li>Rating: 3.8</li>\n    <li>Description: HP ProBook 450 is a popular 15.6-inch business laptop that offers a balance between performance and portability for productivity.</li>\n</ul>\n<p><img src=\"/static/data/Product/Laptop HP Amazon.jpg\" alt=\"Laptop HP ProBook Amazon 450\" style=\"max-width: 250px; border-radius: 8px; display: block; margin: 15px 0 30px 0; border: 1px solid #ddd;\"></p>\n<p><strong>2. Laptop MacBook Air</strong></p>\n<ul>\n    <li>Price: Rp. 10.250.000</li>\n    <li>Rating: 4.6</li>\n    <li>Description: MacBook Air (2025/2026 model) is an ultra-thin and lightweight laptop available in 13-inch and 15-inch sizes, powered by fast Apple M-series chips for high performance.</li>\n</ul>\n<p><img src=\"/static/data/Product/Laptop Macbook Air.jpg\" alt=\"Laptop MacBook Air\" style=\"max-width: 250px; border-radius: 8px; display: block; margin: 15px 0 30px 0; border: 1px solid #ddd;\"></p>\n<p><strong>3. Laptop ASUS Vivobook 14</strong></p>\n<ul>\n    <li>Price: Rp. 7.850.000</li>\n    <li>Rating: 4.5</li>\n    <li>Description: ASUS Vivobook 14 (A1404/M1405) is a stylish, lightweight (1.4kg - 1.5kg) laptop designed for daily productivity, students, or office workers.</li>\n</ul>\n<p><img src=\"/static/data/Product/Laptop Asus Vivobook.jpg\" alt=\"Laptop ASUS Vivobook 14\" style=\"max-width: 250px; border-radius: 8px; display: block; margin: 15px 0 30px 0; border: 1px solid #ddd;\"></p>\n<p><strong>4. Laptop Acer Aspire 3</strong></p>\n<ul>\n    <li>Price: Rp. 8.250.000</li>\n    <li>Rating: 4.4</li>\n    <li>Description: Acer Aspire is a versatile laptop series designed for everyday computing, students, and professionals, featuring Windows 11 and sleek design.</li>\n</ul>\n<p><img src=\"/static/data/Product/Laptop Acer Aspire.jpg\" alt=\"Laptop Acer Aspire 3\" style=\"max-width: 250px; border-radius: 8px; display: block; margin: 15px 0 30px 0; border: 1px solid #ddd;\"></p>\n<p><strong>5. Laptop Huawei</strong></p>\n<ul>\n    <li>Price: Rp. 19.250.000</li>\n    <li>Rating: 4.9</li>\n    <li>Description: Huawei laptops, especially the MateBook series, are known for their ultra-thin design, premium metal body, and high performance for productivity.</li>\n</ul>\n<p><img src=\"/static/data/Product/Laptop Huawei.jpg\" alt=\"Laptop Huawei\" style=\"max-width: 250px; border-radius: 8px; display: block; margin: 15px 0 30px 0; border: 1px solid #ddd;\"></p>",
+                "image": "",
+                "image_mime": "",
+                "algo": "extractive",
+                "latency": 17.02,
+                "eval": {
+                    "prompt_tokens": 28159,
+                    "completion_tokens": 740,
+                    "total_tokens": 28899
+                },
+                "usability_feedback": null
+            }
+        ],
+        "preferences": {
+            "merek_favorit": [],
+            "kategori_minat": [
+                "Laptop"
+            ],
+            "budget": "Bebas",
+            "bahasa_dominan": "Inggris"
+        }
+    },
+    {
+        "id": "99c98f69-1a96-4013-a057-24d34f7c2c22",
+        "title": "carikan portable v-gen",
+        "messages": [
+            {
+                "user": "carikan portable v-gen",
+                "ai": "<p>Tentu! Berikut adalah pilihan untuk <strong>Portable SSD V-Gen</strong> yang kamu cari:</p>\n<p><strong>1. Portable SSD V-Gen</strong></p>\n<ul>\n    <li>Harga: Rp. 1.750.000</li>\n    <li>Rating: 4.8</li>\n    <li>Deskripsi: Portable SSD dengan kecepatan tinggi, cocok untuk gaming, editing video, backup data besar, dan transfer file cepat.</li>\n</ul>\n<p><img src=\"/static/data/Product/Portable SSD V-Gen Platinum.jpg\" alt=\"Portable SSD V-Gen\" style=\"max-width: 250px; border-radius: 8px; display: block; margin: 15px 0 30px 0; border: 1px solid #ddd;\"></p>\n<p>Jika ada yang ingin kamu tanyakan lebih lanjut atau butuh bantuan lainnya, silakan beri tahu!</p>",
+                "image": "",
+                "image_mime": "",
+                "algo": "general",
+                "latency": 6.67,
+                "eval": {
+                    "prompt_tokens": 28173,
+                    "completion_tokens": 181,
+                    "total_tokens": 28354
+                }
+            },
+            {
+                "user": "recommend laptop",
+                "ai": "<p>Sure! Here are some laptop recommendations for you:</p>\n<p><strong>1. Laptop HP ProBook Amazon 450</strong></p>\n<ul>\n    <li>Price: Rp. 15.250.000</li>\n    <li>Rating: 3.8</li>\n    <li>Description: HP ProBook 450 is a popular 15.6-inch business laptop that offers a balance between performance and portability for productivity.</li>\n</ul>\n<p><img src=\"/static/data/Product/Laptop HP Amazon.jpg\" alt=\"Laptop HP ProBook Amazon 450\" style=\"max-width: 150px; border-radius: 8px; display: block; margin: 10px 0; border: 1px solid #ddd;\"></p>\n<p><strong>2. Laptop MacBook Air</strong></p>\n<ul>\n    <li>Price: Rp. 10.250.000</li>\n    <li>Rating: 4.6</li>\n    <li>Description: The MacBook Air (2025/2026 model) is an ultra-thin and lightweight laptop available in 13-inch and 15-inch sizes, powered by Apple's fast M-series chip for high performance.</li>\n</ul>\n<p><img src=\"/static/data/Product/Laptop Macbook Air.jpg\" alt=\"Laptop MacBook Air\" style=\"max-width: 150px; border-radius: 8px; display: block; margin: 10px 0; border: 1px solid #ddd;\"></p>\n<p><strong>3. Laptop ASUS Vivobook 14</strong></p>\n<ul>\n    <li>Price: Rp. 7.850.000</li>\n    <li>Rating: 4.5</li>\n    <li>Description: The ASUS Vivobook 14 (A1404/M1405) is a stylish, lightweight 14-inch laptop that is reliable for daily productivity, students, or office workers.</li>\n</ul>\n<p><img src=\"/static/data/Product/Laptop Asus Vivobook.jpg\" alt=\"Laptop ASUS Vivobook 14\" style=\"max-width: 150px; border-radius: 8px; display: block; margin: 10px 0; border: 1px solid #ddd;\"></p>\n<p>If you need more information or have any other questions, feel free to ask!</p>",
+                "image": "",
+                "image_mime": "",
+                "algo": "general",
+                "latency": 10.97,
+                "eval": {
+                    "prompt_tokens": 28384,
+                    "completion_tokens": 463,
+                    "total_tokens": 28847
+                }
+            }
+        ],
+        "preferences": {
+            "merek_favorit": [
+                "V-Gen"
+            ],
+            "kategori_minat": [
+                "Portable",
+                "Laptop"
+            ],
+            "budget": "Bebas",
+            "bahasa_dominan": "Inggris"
+        }
+    },
+    {
         "id": "91f4f8ee-2f08-40e2-a998-0835538ca6c9",
         "title": "carikan portable",
         "messages": [
@@ -1043,7 +1144,8 @@
                     "prompt_tokens": 28171,
                     "completion_tokens": 479,
                     "total_tokens": 28650
-                }
+                },
+                "usability_feedback": "up"
             }
         ],
         "preferences": {

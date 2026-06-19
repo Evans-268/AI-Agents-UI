@@ -155,14 +155,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (aiContents.length > 0) {
         const lastAiContent = aiContents[aiContents.length - 1];
         const lastAiWrapper = lastAiContent.closest('.ai-wrapper');
-        
-        if (lastAiWrapper) {
-            const elementPosition = lastAiWrapper.getBoundingClientRect().top + window.scrollY;
-            window.scrollTo({
-                top: elementPosition - 20, 
-                behavior: 'auto'
-            });
-        }
 
         const evalMetrics = lastAiWrapper ? lastAiWrapper.querySelector('.eval-metrics') : null;
         const usabilityFeedback = lastAiWrapper ? lastAiWrapper.querySelector('.usability-feedback') : null;
@@ -178,8 +170,33 @@ document.addEventListener('DOMContentLoaded', function() {
         let tokenIndex = 0;
         let charIndex = 0;
         let currentHTML = ''; 
-        
         const typingSpeed = 10; 
+        
+        let isTyping = true; 
+
+        function scrollToBottom() {
+            window.scrollTo({
+                top: document.documentElement.scrollHeight,
+                behavior: 'auto' 
+            });
+        }
+
+        function isNearBottom() {
+            const totalHeight = document.documentElement.scrollHeight;
+            const currentScroll = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+            const windowHeight = window.innerHeight;
+            return (totalHeight - currentScroll - windowHeight) <= 150;
+        }
+
+        let autoScrollEnabled = isNearBottom();
+
+        function detectUserScrollIntent() {
+            if (!isTyping) return;
+            autoScrollEnabled = isNearBottom();
+        }
+
+        window.addEventListener('wheel', detectUserScrollIntent, { passive: true });
+        window.addEventListener('touchmove', detectUserScrollIntent, { passive: true });
 
         function typeWriterSafe() {
             if (tokenIndex < tokens.length) {
@@ -189,14 +206,18 @@ document.addEventListener('DOMContentLoaded', function() {
                     currentHTML += currentToken;
                     lastAiContent.innerHTML = currentHTML;
                     tokenIndex++;
+                    
+                    if (autoScrollEnabled) scrollToBottom(); 
+                    
                     typeWriterSafe();
-                } 
-                // Jika token adalah Teks biasa
-                else {
+                } else {
                     if (charIndex < currentToken.length) {
                         currentHTML += currentToken.charAt(charIndex);
                         lastAiContent.innerHTML = currentHTML;
                         charIndex++;
+                        
+                        if (autoScrollEnabled) scrollToBottom(); 
+                        
                         setTimeout(typeWriterSafe, typingSpeed);
                     } else {
                         charIndex = 0;
@@ -205,6 +226,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 }
             } else {
+                isTyping = false; 
+                window.removeEventListener('wheel', detectUserScrollIntent);
+                window.removeEventListener('touchmove', detectUserScrollIntent);
+
                 if (evalMetrics) {
                     evalMetrics.style.transition = 'opacity 0.5s ease-in';
                     evalMetrics.style.opacity = '1';
@@ -212,6 +237,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (usabilityFeedback) {
                     usabilityFeedback.style.transition = 'opacity 0.5s ease-in';
                     usabilityFeedback.style.opacity = '1';
+                }
+                
+                if (autoScrollEnabled) {
+                    window.scrollTo({
+                        top: document.documentElement.scrollHeight,
+                        behavior: 'smooth'
+                    });
                 }
             }
         }
@@ -222,8 +254,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (toggleSidebarBtn) {
         toggleSidebarBtn.addEventListener('click', function() {
-            // Ini akan menambah atau menghapus class 'sidebar-closed' pada elemen <body>
-            // CSS yang kita buat tadi akan mendeteksi class ini dan menggeser sidebar.
             document.body.classList.toggle('sidebar-closed');
         });
     }
