@@ -1,5 +1,179 @@
 [
     {
+        "id": "b3045534-8edf-42ac-91ce-3be79e4d8025",
+        "title": "Bagaimana jika budget say...",
+        "messages": [
+            {
+                "user": "Bagaimana jika budget saya hanya Rp 200.000?",
+                "ai": "<p>Berikut adalah beberapa alternatif produk yang sesuai dengan skenario budget Anda yang hanya Rp 200.000:</p>\n<h3>Alternatif Produk</h3>\n<p><strong>1. HONYAN MAN</strong></p>\n<ul>\n    <li>Harga: Rp. 150.000</li>\n    <li>Rating: 4.6</li>\n    <li>Deskripsi: Honyan Man adalah lini produk aksesori pria, terutama dompet dan tas, yang dikenal dengan desain simpel, elegan, dan material kulit PU premium serta kanvas berkualitas.</li>\n</ul>\n<p><img src=\"/static/data/Product/HONYAN MAN.jpg\" alt=\"HONYAN MAN\" style=\"max-width: 150px; border-radius: 8px; display: block; margin: 10px 0; border: 1px solid #ddd;\"></p>\n<p><strong>2. Keyboard Mouse Set Wireless Bluetooth</strong></p>\n<ul>\n    <li>Harga: Rp. 125.000</li>\n    <li>Rating: 4.9</li>\n    <li>Deskripsi: Set keyboard dan mouse Bluetooth nirkabel ini adalah kombinasi ringkas dan portabel yang dirancang untuk kompatibilitas multi-perangkat, termasuk iOS, Android, Windows, dan macOS.</li>\n</ul>\n<p><img src=\"/static/data/Product/Keyboard Mouse Set Wireless Bluetooth.jpg\" alt=\"Keyboard Mouse Set Wireless Bluetooth\" style=\"max-width: 150px; border-radius: 8px; display: block; margin: 10px 0; border: 1px solid #ddd;\"></p>\n<p><strong>3. Earphone Smart Screen Active Noise Reduction</strong></p>\n<ul>\n    <li>Harga: Rp. 650.000</li>\n    <li>Rating: 4.4</li>\n    <li>Deskripsi: Earphone Bluetooth 5.4 yang dilengkapi layar sentuh LCD berwarna pada casing pengisi daya untuk kontrol langsung, ANC (Active Noise Cancellation) + ENC (Environmental Noise Cancelling), dan baterai 30mAH per earbud untuk pemutaran sekitar 4,5 jam.</li>\n</ul>\n<p><img src=\"/static/data/Product/Earphone Smart Screen Active Noise Reduction.jpeg\" alt=\"Earphone Smart Screen Active Noise Reduction\" style=\"max-width: 150px; border-radius: 8px; display: block; margin: 10px 0; border: 1px solid #ddd;\"></p>\n<h3>Penjelasan</h3>\n<ul>\n<li><strong>HONYAN MAN</strong> dan <strong>Keyboard Mouse Set Wireless Bluetooth</strong> adalah pilihan yang terjangkau dan praktis untuk penggunaan sehari-hari.</li>\n<li><strong>Earphone Smart Screen Active Noise Reduction</strong> sedikit lebih mahal, tetapi menawarkan fitur yang menarik jika Anda mencari earphone dengan teknologi noise cancellation.</li>\n</ul>\n<p>Semoga alternatif ini membantu Anda dalam memilih produk yang sesuai dengan budget Anda!</p>",
+                "image": "",
+                "image_mime": "",
+                "algo": "what_if",
+                "latency": 9.2,
+                "eval": {
+                    "prompt_tokens": 28287,
+                    "completion_tokens": 578,
+                    "total_tokens": 28865
+                },
+                "usability_feedback": null
+            }
+        ],
+        "preferences": {
+            "merek_favorit": [],
+            "kategori_minat": [],
+            "budget": "Murah / Terjangkau",
+            "bahasa_dominan": "Indonesia"
+        }
+    },
+    {
+        "id": "7a53fc84-fb97-4d0c-83c0-13c2ddd7ce45",
+        "title": "Beri saya rekomendasi pro...",
+        "messages": [
+            {
+                "user": "Beri saya rekomendasi produk yang cocok berdasarkan obrolan kita sejauh ini",
+                "ai": "<p>Berikut adalah beberapa rekomendasi produk yang cocok untuk Anda berdasarkan preferensi saat ini:</p>\n<p><strong>1. Portable SSD V-Gen</strong></p>\n<ul>\n    <li>Harga: Rp. 1.750.000</li>\n    <li>Rating: 4.8</li>\n    <li>Deskripsi: Portable SSD dengan kecepatan tinggi, cocok untuk gaming, editing video, backup data besar, dan transfer file cepat.</li>\n</ul>\n<p><img src=\"/static/data/Product/Portable SSD V-Gen Platinum.jpg\" alt=\"Portable SSD V-Gen\" style=\"max-width: 250px; border-radius: 8px; display: block; margin: 15px 0 30px 0; border: 1px solid #ddd;\"></p>\n<p>\ud83d\udca1 <strong>Mengapa cocok untukmu</strong>: Memiliki kecepatan transfer yang tinggi, ideal untuk kebutuhan penyimpanan data besar dan cepat.</p>\n<p><strong>Kelebihan:</strong></p>\n<ul>\n    <li>Kecepatan transfer yang sangat baik.</li>\n    <li>Desain portabel dan kompak.</li>\n    <li>Cocok untuk berbagai keperluan, termasuk gaming dan editing.</li>\n</ul>\n\n<p><strong>Kekurangan:</strong></p>\n<ul>\n    <li>Harga sedikit lebih tinggi dibandingkan SSD biasa.</li>\n    <li>Memerlukan port USB 3.0 atau lebih untuk kecepatan maksimal.</li>\n</ul>\n\n<hr />\n<p><strong>2. Sata 3 V-Gen 256 GB</strong></p>\n<ul>\n    <li>Harga: Rp. 1.250.000</li>\n    <li>Rating: 4.6</li>\n    <li>Deskripsi: SSD V-Gen 256GB SATA III dirancang untuk meningkatkan kecepatan komputer/laptop dengan kecepatan baca hingga 530 MB/s dan tulis hingga 477 MB/s.</li>\n</ul>\n<p><img src=\"/static/data/Product/Sata 3 V-Gen 256 GB.jpg\" alt=\"Sata 3 V-Gen 256 GB\" style=\"max-width: 250px; border-radius: 8px; display: block; margin: 15px 0 30px 0; border: 1px solid #ddd;\"></p>\n<p>\ud83d\udca1 <strong>Mengapa cocok untukmu</strong>: Menawarkan peningkatan performa yang signifikan untuk komputer atau laptop Anda.</p>\n<p><strong>Kelebihan:</strong></p>\n<ul>\n    <li>Kecepatan baca dan tulis yang baik.</li>\n    <li>Harga yang lebih terjangkau untuk SSD.</li>\n    <li>Instalasi yang mudah pada laptop atau desktop.</li>\n</ul>\n\n<p><strong>Kekurangan:</strong></p>\n<ul>\n    <li>Kapastitas yang lebih kecil dibandingkan dengan SSD eksternal.</li>\n    <li>Memerlukan instalasi fisik di dalam perangkat.</li>\n</ul>\n\n<hr />\n<p><strong>3. Portable SSD Samsung</strong></p>\n<ul>\n    <li>Harga: Rp. 1.325.000</li>\n    <li>Rating: 4.7</li>\n    <li>Deskripsi: Portable SSD Samsung adalah solusi penyimpanan eksternal berperforma tinggi, ringkas, dan andal, dengan kecepatan transfer data cepat (hingga 2.000 MB/s).</li>\n</ul>\n<p><img src=\"/static/data/Product/Portable SSD Samsung.jpg\" alt=\"Portable SSD Samsung\" style=\"max-width: 250px; border-radius: 8px; display: block; margin: 15px 0 30px 0; border: 1px solid #ddd;\"></p>\n<p>\ud83d\udca1 <strong>Mengapa cocok untukmu</strong>: Memiliki kecepatan transfer yang sangat tinggi dan desain yang kompak, ideal untuk pengguna yang membutuhkan mobilitas tinggi.</p>\n<p><strong>Kelebihan:</strong></p>\n<ul>\n    <li>Kecepatan transfer yang sangat cepat.</li>\n    <li>Desain yang ringkas dan tahan lama.</li>\n    <li>Kompatibilitas luas dengan berbagai perangkat.</li>\n</ul>\n\n<p><strong>Kekurangan:</strong></p>\n<ul>\n    <li>Harga lebih tinggi dibandingkan SSD biasa.</li>\n    <li>Memerlukan port USB 3.1 atau lebih untuk kecepatan maksimal.</li>\n</ul>\n\n<hr />\n<p>Semoga rekomendasi ini membantu Anda dalam memilih produk yang sesuai!</p>",
+                "image": "",
+                "image_mime": "",
+                "algo": "recommendation",
+                "latency": 12.88,
+                "eval": {
+                    "prompt_tokens": 28223,
+                    "completion_tokens": 903,
+                    "total_tokens": 29126
+                }
+            },
+            {
+                "user": "yang Sata 3 V-Gen 256 GB",
+                "ai": "<p>Tentu! Berikut adalah informasi tentang <strong>Sata 3 V-Gen 256 GB</strong> yang Anda tanyakan:</p>\n<p><strong>1. Sata 3 V-Gen 256 GB</strong></p>\n<ul>\n    <li>Harga: Rp. 1.250.000</li>\n    <li>Rating: 4.6</li>\n    <li>Deskripsi: SSD V-Gen 256GB SATA III dirancang untuk meningkatkan kecepatan komputer/laptop dengan kecepatan baca hingga 530 MB/s dan tulis hingga 477 MB/s.</li>\n</ul>\n<p><img src=\"/static/data/Product/Sata 3 V-Gen 256 GB.jpg\" alt=\"Sata 3 V-Gen 256 GB\" style=\"max-width: 250px; border-radius: 8px; display: block; margin: 15px 0 30px 0; border: 1px solid #ddd;\"></p>\n<p>\ud83d\udca1 <strong>Mengapa cocok untukmu</strong>: Menawarkan peningkatan performa yang signifikan untuk komputer atau laptop Anda.</p>\n<p><strong>Kelebihan:</strong></p>\n<ul>\n    <li>Kecepatan baca dan tulis yang baik.</li>\n    <li>Harga yang lebih terjangkau untuk SSD.</li>\n    <li>Instalasi yang mudah pada laptop atau desktop.</li>\n</ul>\n\n<p><strong>Kekurangan:</strong></p>\n<ul>\n    <li>Kapastitas yang lebih kecil dibandingkan dengan SSD eksternal.</li>\n    <li>Memerlukan instalasi fisik di dalam perangkat.</li>\n</ul>\n\n<p>Jika Anda memerlukan informasi lebih lanjut atau rekomendasi lainnya, silakan beri tahu saya!</p>",
+                "image": "",
+                "image_mime": "",
+                "algo": "general",
+                "latency": 5.26,
+                "eval": {
+                    "prompt_tokens": 29199,
+                    "completion_tokens": 351,
+                    "total_tokens": 29550
+                }
+            }
+        ],
+        "preferences": {
+            "merek_favorit": [
+                "V-Gen"
+            ],
+            "kategori_minat": [
+                "Sata 3"
+            ],
+            "budget": "Bebas",
+            "bahasa_dominan": "Indonesia"
+        }
+    },
+    {
+        "id": "dfda3536-2195-4623-90b2-ca3571b4c265",
+        "title": "Carikan laptop",
+        "messages": [
+            {
+                "user": "Carikan laptop",
+                "ai": "<p>Halo! Senang bisa membantu kamu. Untuk laptop, saya bisa merekomendasikan beberapa pilihan yang mungkin sesuai dengan kebutuhanmu. Namun, saat ini saya tidak memiliki data spesifik tentang laptop. </p>\n<p>Tapi, jika kamu memiliki kriteria tertentu seperti merek, spesifikasi, atau budget, silakan beri tahu saya! Saya akan berusaha memberikan rekomendasi yang terbaik untukmu. \ud83d\ude0a</p>",
+                "image": "",
+                "image_mime": "",
+                "algo": "general",
+                "latency": 2.09,
+                "eval": {
+                    "prompt_tokens": 2386,
+                    "completion_tokens": 79,
+                    "total_tokens": 2465
+                }
+            }
+        ],
+        "preferences": {
+            "merek_favorit": [],
+            "kategori_minat": [
+                "Laptop"
+            ],
+            "budget": "Bebas",
+            "bahasa_dominan": "Indonesia"
+        }
+    },
+    {
+        "id": "e9e506d5-9341-4a5a-b051-cbffa6f93e07",
+        "title": "Carikan buku",
+        "messages": [
+            {
+                "user": "Carikan buku",
+                "ai": "<p>Tentu! Berikut beberapa buku yang mungkin kamu suka:</p>\n<p><strong>1. A Light in the Attic</strong></p>\n<ul>\n    <li>Harga: \u00a351.77</li>\n    <li>Rating: Tidak tersedia</li>\n    <li>Deskripsi: Buku ini merupakan kumpulan puisi anak-anak yang ditulis oleh Shel Silverstein.</li>\n</ul>\n<p><img src=\"https://books.toscrape.com/media/cache/2c/da/2cdad67c44b002e7ead0cc35693c0e8b.jpg\" alt=\"A Light in the Attic\" style=\"max-width: 150px; border-radius: 8px; display: block; margin: 10px 0; border: 1px solid #ddd;\"></p>\n<p><strong>2. Tipping the Velvet</strong></p>\n<ul>\n    <li>Harga: \u00a353.74</li>\n    <li>Rating: Tidak tersedia</li>\n    <li>Deskripsi: Novel yang menggambarkan kehidupan seorang wanita muda di London pada akhir abad ke-19.</li>\n</ul>\n<p><img src=\"https://books.toscrape.com/media/cache/26/0c/260c6ae16bce31c8f8c95daddd9f4a1c.jpg\" alt=\"Tipping the Velvet\" style=\"max-width: 150px; border-radius: 8px; display: block; margin: 10px 0; border: 1px solid #ddd;\"></p>\n<p><strong>3. Sapiens: A Brief History of Humankind</strong></p>\n<ul>\n    <li>Harga: \u00a354.23</li>\n    <li>Rating: Tidak tersedia</li>\n    <li>Deskripsi: Buku ini menjelaskan sejarah manusia dari zaman prasejarah hingga era modern.</li>\n</ul>\n<p><img src=\"https://books.toscrape.com/media/cache/be/a5/bea5697f2534a2f86a3ef27b5a8c12a6.jpg\" alt=\"Sapiens: A Brief History of Humankind\" style=\"max-width: 150px; border-radius: 8px; display: block; margin: 10px 0; border: 1px solid #ddd;\"></p>\n<p>Kalau ada yang menarik atau butuh rekomendasi lebih banyak, jangan ragu untuk tanya ya! \ud83d\ude0a</p>",
+                "image": "",
+                "image_mime": "",
+                "algo": "general",
+                "latency": 7.86,
+                "eval": {
+                    "prompt_tokens": 2386,
+                    "completion_tokens": 499,
+                    "total_tokens": 2885
+                }
+            },
+            {
+                "user": "Bagaimana jika budget saya hanya Rp 200.000?",
+                "ai": "<p>Dengan budget Rp 200.000, ada beberapa produk yang bisa kamu pertimbangkan. Berikut adalah alternatif yang sesuai dengan budgetmu:</p>\n<p><strong>1. HONYAN MAN</strong></p>\n<ul>\n    <li>Harga: Rp. 150.000</li>\n    <li>Rating: 4.6</li>\n    <li>Deskripsi: Honyan Man adalah lini produk aksesori pria, terutama dompet dan tas, yang dikenal dengan desain simpel, elegan, dan material kulit PU premium serta kanvas berkualitas.</li>\n</ul>\n<p><img src=\"/static/data/Product/HONYAN MAN.jpg\" alt=\"HONYAN MAN\" style=\"max-width: 150px; border-radius: 8px; display: block; margin: 10px 0; border: 1px solid #ddd;\"></p>\n<p><strong>2. Keyboard Mouse Set Wireless Bluetooth</strong></p>\n<ul>\n    <li>Harga: Rp. 125.000</li>\n    <li>Rating: 4.9</li>\n    <li>Deskripsi: Set keyboard dan mouse Bluetooth nirkabel ini adalah kombinasi ringkas dan portabel yang dirancang untuk kompatibilitas multi-perangkat, termasuk iOS, Android, Windows, dan macOS.</li>\n</ul>\n<p><img src=\"/static/data/Product/Keyboard Mouse Set Wireless Bluetooth.jpg\" alt=\"Keyboard Mouse Set Wireless Bluetooth\" style=\"max-width: 150px; border-radius: 8px; display: block; margin: 10px 0; border: 1px solid #ddd;\"></p>\n<p>Kalau ada yang menarik atau butuh rekomendasi lebih banyak, jangan ragu untuk tanya ya! \ud83d\ude0a</p>",
+                "image": "",
+                "image_mime": "",
+                "algo": "general",
+                "latency": 6.54,
+                "eval": {
+                    "prompt_tokens": 28729,
+                    "completion_tokens": 345,
+                    "total_tokens": 29074
+                }
+            },
+            {
+                "user": "Bagaimana jika budget saya hanya Rp 200.000?",
+                "ai": "<p>Tentu! Dengan budget Rp 200.000, berikut adalah beberapa produk yang bisa kamu pertimbangkan:</p>\n<p><strong>1. HONYAN MAN</strong></p>\n<ul>\n    <li>Harga: Rp. 150.000</li>\n    <li>Rating: 4.6</li>\n    <li>Deskripsi: Honyan Man adalah lini produk aksesori pria, terutama dompet dan tas, yang dikenal dengan desain simpel, elegan, dan material kulit PU premium serta kanvas berkualitas.</li>\n</ul>\n<p><img src=\"/static/data/Product/HONYAN MAN.jpg\" alt=\"HONYAN MAN\" style=\"max-width: 150px; border-radius: 8px; display: block; margin: 10px 0; border: 1px solid #ddd;\"></p>\n\n<p><strong>2. Keyboard Mouse Set Wireless Bluetooth</strong></p>\n<ul>\n    <li>Harga: Rp. 125.000</li>\n    <li>Rating: 4.9</li>\n    <li>Deskripsi: Set keyboard dan mouse Bluetooth nirkabel ini adalah kombinasi ringkas dan portabel yang dirancang untuk kompatibilitas multi-perangkat, termasuk iOS, Android, Windows, dan macOS.</li>\n</ul>\n<p><img src=\"/static/data/Product/Keyboard Mouse Set Wireless Bluetooth.jpg\" alt=\"Keyboard Mouse Set Wireless Bluetooth\" style=\"max-width: 150px; border-radius: 8px; display: block; margin: 10px 0; border: 1px solid #ddd;\"></p>\n\n<p>Kalau ada yang menarik atau butuh rekomendasi lebih banyak, jangan ragu untuk tanya ya! \ud83d\ude0a</p>",
+                "image": "",
+                "image_mime": "",
+                "algo": "general",
+                "latency": 7.07,
+                "eval": {
+                    "prompt_tokens": 29119,
+                    "completion_tokens": 360,
+                    "total_tokens": 29479
+                }
+            },
+            {
+                "user": "Bagaimana jika budget saya hanya Rp 200.000?",
+                "ai": "<p>Tentu! Dengan budget Rp 200.000, berikut adalah beberapa produk yang bisa kamu pertimbangkan:</p>\n\n<p><strong>1. HONYAN MAN</strong></p>\n<ul>\n    <li>Harga: Rp. 150.000</li>\n    <li>Rating: 4.6</li>\n    <li>Deskripsi: Honyan Man adalah lini produk aksesori pria, terutama dompet dan tas, yang dikenal dengan desain simpel, elegan, dan material kulit PU premium serta kanvas berkualitas.</li>\n</ul>\n<p><img src=\"/static/data/Product/HONYAN MAN.jpg\" alt=\"HONYAN MAN\" style=\"max-width: 150px; border-radius: 8px; display: block; margin: 10px 0; border: 1px solid #ddd;\"></p>\n\n<p><strong>2. Keyboard Mouse Set Wireless Bluetooth</strong></p>\n<ul>\n    <li>Harga: Rp. 125.000</li>\n    <li>Rating: 4.9</li>\n    <li>Deskripsi: Set keyboard dan mouse Bluetooth nirkabel ini adalah kombinasi ringkas dan portabel yang dirancang untuk kompatibilitas multi-perangkat, termasuk iOS, Android, Windows, dan macOS.</li>\n</ul>\n<p><img src=\"/static/data/Product/Keyboard Mouse Set Wireless Bluetooth.jpg\" alt=\"Keyboard Mouse Set Wireless Bluetooth\" style=\"max-width: 150px; border-radius: 8px; display: block; margin: 10px 0; border: 1px solid #ddd;\"></p>\n\n<p>Kalau ada yang menarik atau butuh rekomendasi lebih banyak, jangan ragu untuk tanya ya! \ud83d\ude0a</p>",
+                "image": "",
+                "image_mime": "",
+                "algo": "general",
+                "latency": 5.69,
+                "eval": {
+                    "prompt_tokens": 29503,
+                    "completion_tokens": 368,
+                    "total_tokens": 29871
+                }
+            },
+            {
+                "user": "Bagaimana jika budget saya hanya Rp 200.000?",
+                "ai": "<p>Halo! Dengan budget Rp 200.000, ada beberapa buku menarik yang bisa kamu pertimbangkan. Berikut adalah beberapa pilihan yang mungkin sesuai:</p>\n<p><strong>1. A Light in the Attic</strong></p>\n<ul>\n    <li>Harga: \u00a351.77</li>\n    <li>Rating: -</li>\n    <li>Deskripsi: -</li>\n</ul>\n<p><img src=\"https://books.toscrape.com/media/cache/2c/da/2cdad67c44b002e7ead0cc35693c0e8b.jpg\" alt=\"A Light in the Attic\" style=\"max-width: 150px; border-radius: 8px; display: block; margin: 10px 0; border: 1px solid #ddd;\"></p>\n<p><strong>2. Tipping the Velvet</strong></p>\n<ul>\n    <li>Harga: \u00a353.74</li>\n    <li>Rating: -</li>\n    <li>Deskripsi: -</li>\n</ul>\n<p><img src=\"https://books.toscrape.com/media/cache/26/0c/260c6ae16bce31c8f8c95daddd9f4a1c.jpg\" alt=\"Tipping the Velvet\" style=\"max-width: 150px; border-radius: 8px; display: block; margin: 10px 0; border: 1px solid #ddd;\"></p>\n<p><strong>3. Soumission</strong></p>\n<ul>\n    <li>Harga: \u00a350.10</li>\n    <li>Rating: -</li>\n    <li>Deskripsi: -</li>\n</ul>\n<p><img src=\"https://books.toscrape.com/media/cache/3e/ef/3eef99c9d9adef34639f510662022830.jpg\" alt=\"Soumission\" style=\"max-width: 150px; border-radius: 8px; display: block; margin: 10px 0; border: 1px solid #ddd;\"></p>\n<p>Kalau ada yang menarik atau butuh rekomendasi lebih banyak, jangan ragu untuk tanya ya! \ud83d\ude0a</p>",
+                "image": "",
+                "image_mime": "",
+                "algo": "general",
+                "latency": 6.85,
+                "eval": {
+                    "prompt_tokens": 3556,
+                    "completion_tokens": 459,
+                    "total_tokens": 4015
+                }
+            }
+        ],
+        "preferences": {
+            "merek_favorit": [],
+            "kategori_minat": [
+                "Buku"
+            ],
+            "budget": "Murah / Terjangkau",
+            "bahasa_dominan": "Indonesia"
+        }
+    },
+    {
         "id": "fbca9c49-75a9-4636-8fdc-dbadf2a7421d",
         "title": "carikan portable v-gen",
         "messages": [
@@ -15,6 +189,19 @@
                     "completion_tokens": 180,
                     "total_tokens": 28353
                 }
+            },
+            {
+                "user": "carikan laptop",
+                "ai": "<p>Tentu! Berikut adalah beberapa pilihan laptop yang bisa kamu pertimbangkan:</p>\n<p><strong>1. Laptop HP ProBook Amazon 450</strong></p>\n<ul>\n    <li>Harga: Rp. 15.250.000</li>\n    <li>Rating: 3.8</li>\n    <li>Deskripsi: Laptop bisnis 15,6 inci yang menawarkan keseimbangan antara performa dan portabilitas untuk produktivitas.</li>\n</ul>\n<p><img src=\"/static/data/Product/Laptop HP Amazon.jpg\" alt=\"Laptop HP ProBook Amazon 450\" style=\"max-width: 250px; border-radius: 8px; display: block; margin: 15px 0 30px 0; border: 1px solid #ddd;\"></p>\n<p><strong>2. Laptop MacBook Air</strong></p>\n<ul>\n    <li>Harga: Rp. 10.250.000</li>\n    <li>Rating: 4.6</li>\n    <li>Deskripsi: Laptop ultra tipis dan ringan yang ditenagai oleh chip seri M Apple untuk performa tinggi.</li>\n</ul>\n<p><img src=\"/static/data/Product/Laptop Macbook Air.jpg\" alt=\"Laptop MacBook Air\" style=\"max-width: 250px; border-radius: 8px; display: block; margin: 15px 0 30px 0; border: 1px solid #ddd;\"></p>\n<p><strong>3. Laptop ASUS Vivobook 14</strong></p>\n<ul>\n    <li>Harga: Rp. 7.850.000</li>\n    <li>Rating: 4.5</li>\n    <li>Deskripsi: Laptop 14-inci yang stylish dan andal untuk produktivitas harian.</li>\n</ul>\n<p><img src=\"/static/data/Product/Laptop Asus Vivobook.jpg\" alt=\"Laptop ASUS Vivobook 14\" style=\"max-width: 250px; border-radius: 8px; display: block; margin: 15px 0 30px 0; border: 1px solid #ddd;\"></p>\n<p>Jika ada yang ingin ditanyakan lebih lanjut, silakan beri tahu!</p>",
+                "image": "",
+                "image_mime": "",
+                "algo": "abstractive",
+                "latency": 7.59,
+                "eval": {
+                    "prompt_tokens": 28362,
+                    "completion_tokens": 453,
+                    "total_tokens": 28815
+                }
             }
         ],
         "preferences": {
@@ -22,7 +209,8 @@
                 "V-Gen"
             ],
             "kategori_minat": [
-                "Portable"
+                "Portable",
+                "Laptop"
             ],
             "budget": "Bebas",
             "bahasa_dominan": "Indonesia"
@@ -45,6 +233,19 @@
                     "total_tokens": 29200
                 },
                 "usability_feedback": null
+            },
+            {
+                "user": "Bagaimana jika budget saya hanya Rp 8.000.000?",
+                "ai": "<p>Berikut adalah alternatif produk yang sesuai dengan skenario budget Anda yang hanya Rp 8.000.000. Saya akan menawarkan beberapa pilihan laptop yang terjangkau dan sesuai dengan kebutuhan Anda.</p>\n<h3>Alternatif Produk</h3>\n<p><strong>1. Laptop ASUS Vivobook 15</strong></p>\n<ul>\n    <li>Harga: Rp. 7.850.000</li>\n    <li>Rating: 4.2</li>\n    <li>Deskripsi: Laptop harian 15,6 inci yang stylish dan serbaguna, ideal untuk produktivitas, pelajar, dan hiburan.</li>\n</ul>\n<p><img src=\"/static/data/Product/Laptop Asus.jpg\" alt=\"Laptop ASUS Vivobook 15\" style=\"max-width: 150px; border-radius: 8px; display: block; margin: 10px 0; border: 1px solid #ddd;\"></p>\n<p><strong>2. Laptop Acer Aspire 3</strong></p>\n<ul>\n    <li>Harga: Rp. 8.250.000</li>\n    <li>Rating: 4.4</li>\n    <li>Deskripsi: Laptop serbaguna dengan harga terjangkau, dirancang untuk komputasi sehari-hari, pelajar, dan profesional.</li>\n</ul>\n<p><img src=\"/static/data/Product/Laptop Acer Aspire.jpg\" alt=\"Laptop Acer Aspire 3\" style=\"max-width: 150px; border-radius: 8px; display: block; margin: 10px 0; border: 1px solid #ddd;\"></p>\n<p><strong>3. Laptop ASUS Vivobook 14</strong></p>\n<ul>\n    <li>Harga: Rp. 7.850.000</li>\n    <li>Rating: 4.5</li>\n    <li>Deskripsi: Laptop 14-inci yang stylish, ringan, dan andal untuk produktivitas harian, pelajar, atau pekerja kantoran.</li>\n</ul>\n<p><img src=\"/static/data/Product/Laptop Asus Vivobook.jpg\" alt=\"Laptop ASUS Vivobook 14\" style=\"max-width: 150px; border-radius: 8px; display: block; margin: 10px 0; border: 1px solid #ddd;\"></p>\n<h3>Kesimpulan</h3>\n<p>Ketiga alternatif di atas adalah pilihan yang baik untuk Anda dengan budget di bawah Rp 8.000.000. Mereka menawarkan kombinasi performa yang baik, desain yang menarik, dan fitur yang sesuai untuk kebutuhan sehari-hari.</p>",
+                "image": "",
+                "image_mime": "",
+                "algo": "what_if",
+                "latency": 7.86,
+                "eval": {
+                    "prompt_tokens": 29271,
+                    "completion_tokens": 514,
+                    "total_tokens": 29785
+                }
             }
         ],
         "preferences": {
@@ -54,7 +255,7 @@
             "kategori_minat": [
                 "Laptop"
             ],
-            "budget": "Bebas",
+            "budget": "Murah / Terjangkau",
             "bahasa_dominan": "Indonesia"
         }
     },
@@ -130,80 +331,6 @@
         }
     },
     {
-        "id": "91f4f8ee-2f08-40e2-a998-0835538ca6c9",
-        "title": "carikan portable",
-        "messages": [
-            {
-                "user": "carikan portable",
-                "ai": "Maaf, kendala teknis AI saat memproses. Pastikan API Key valid.",
-                "image": "",
-                "image_mime": "",
-                "algo": "general",
-                "latency": 0.43,
-                "eval": null
-            }
-        ],
-        "preferences": {
-            "merek_favorit": [],
-            "kategori_minat": [],
-            "budget": "Bebas",
-            "bahasa_dominan": "Indonesia"
-        }
-    },
-    {
-        "id": "11bafdfa-3d19-4c7c-bc13-574b30c3f0fa",
-        "title": "Tolong rekomendasikan lap...",
-        "messages": [
-            {
-                "user": "Tolong rekomendasikan laptop",
-                "ai": "<p>Berikut adalah rekomendasi laptop yang cocok untuk kamu:</p>\n<p><strong>1. Laptop HP ProBook Amazon 450</strong></p>\n<ul>\n    <li>Harga: Rp. 15.250.000</li>\n    <li>Rating: 3.8</li>\n    <li>Deskripsi: HP ProBook 450 adalah laptop bisnis 15,6 inci yang populer, menawarkan keseimbangan antara performa dan portabilitas untuk produktivitas.</li>\n</ul>\n<p><img src=\"/static/data/Product/Laptop HP Amazon.jpg\" alt=\"Laptop HP ProBook Amazon 450\" style=\"max-width: 250px; border-radius: 8px; display: block; margin: 15px 0 30px 0; border: 1px solid #ddd;\"></p>\n<p>\ud83d\udca1 <strong>Mengapa cocok untukmu</strong>: Laptop ini ideal untuk penggunaan bisnis dan produktivitas sehari-hari, dengan ukuran layar yang cukup besar untuk multitasking.</p>\n<p><strong>Kelebihan:</strong></p>\n<ul>\n    <li>Performa yang baik untuk tugas bisnis.</li>\n    <li>Desain yang profesional dan elegan.</li>\n    <li>Portabilitas yang baik untuk dibawa bepergian.</li>\n</ul>\n\n<p><strong>Kekurangan:</strong></p>\n<ul>\n    <li>Rating yang lebih rendah dibandingkan dengan beberapa model lain.</li>\n    <li>Harga yang cukup tinggi untuk segmen bisnis.</li>\n</ul>\n\n<hr />\n<p><strong>2. Laptop ASUS Vivobook 14</strong></p>\n<ul>\n    <li>Harga: Rp. 7.850.000</li>\n    <li>Rating: 4.5</li>\n    <li>Deskripsi: ASUS Vivobook 14 adalah laptop 14-inci yang stylish, ringan, dan andal untuk produktivitas harian, pelajar, atau pekerja kantoran.</li>\n</ul>\n<p><img src=\"/static/data/Product/Laptop Asus Vivobook.jpg\" alt=\"Laptop ASUS Vivobook 14\" style=\"max-width: 250px; border-radius: 8px; display: block; margin: 15px 0 30px 0; border: 1px solid #ddd;\"></p>\n<p>\ud83d\udca1 <strong>Mengapa cocok untukmu</strong>: Laptop ini menawarkan kombinasi performa dan desain yang menarik, cocok untuk pelajar dan pekerja kantoran.</p>\n<p><strong>Kelebihan:</strong></p>\n<ul>\n    <li>Ringan dan mudah dibawa.</li>\n    <li>Desain stylish yang menarik perhatian.</li>\n    <li>Performa yang cukup baik untuk tugas sehari-hari.</li>\n</ul>\n\n<p><strong>Kekurangan:</strong></p>\n<ul>\n    <li>Ukuran layar yang lebih kecil dibandingkan dengan model 15,6 inci.</li>\n    <li>Beberapa pengguna mungkin menginginkan spesifikasi yang lebih tinggi.</li>\n</ul>\n\n<hr />\n<p><strong>3. Laptop MacBook Air</strong></p>\n<ul>\n    <li>Harga: Rp. 10.250.000</li>\n    <li>Rating: 4.6</li>\n    <li>Deskripsi: MacBook Air adalah laptop ultra tipis dan ringan yang ditenagai oleh chip seri M Apple yang cepat untuk performa tinggi.</li>\n</ul>\n<p><img src=\"/static/data/Product/Laptop Macbook Air.jpg\" alt=\"Laptop MacBook Air\" style=\"max-width: 250px; border-radius: 8px; display: block; margin: 15px 0 30px 0; border: 1px solid #ddd;\"></p>\n<p>\ud83d\udca1 <strong>Mengapa cocok untukmu</strong>: MacBook Air adalah pilihan yang sangat baik untuk pengguna yang mencari performa tinggi dalam desain yang ringkas dan elegan.</p>\n<p><strong>Kelebihan:</strong></p>\n<ul>\n    <li>Performa tinggi dengan chip M Apple.</li>\n    <li>Desain ultra tipis dan ringan.</li>\n    <li>Ekosistem Apple yang terintegrasi dengan baik.</li>\n</ul>\n\n<p><strong>Kekurangan:</strong></p>\n<ul>\n    <li>Harga yang lebih tinggi dibandingkan laptop lain di kelasnya.</li>\n    <li>Kurangnya port yang lebih banyak dibandingkan dengan laptop Windows.</li>\n</ul>\n\n<hr />\n<p>Semoga rekomendasi ini membantu kamu dalam memilih laptop yang sesuai!</p>",
-                "image": "",
-                "image_mime": "",
-                "algo": "recommendation",
-                "latency": 28.39,
-                "eval": {
-                    "prompt_tokens": 28211,
-                    "completion_tokens": 888,
-                    "total_tokens": 29099
-                },
-                "usability_feedback": "up"
-            }
-        ],
-        "preferences": {
-            "merek_favorit": [],
-            "kategori_minat": [],
-            "budget": "Bebas",
-            "bahasa_dominan": "Indonesia"
-        }
-    },
-    {
-        "id": "ba63020b-dd0c-4239-96b0-040087df3d25",
-        "title": "carikan laptop",
-        "messages": [
-            {
-                "user": "carikan laptop",
-                "ai": "<p>Tentu! Berikut beberapa pilihan laptop yang bisa kamu pertimbangkan:</p>\n<p><strong>1. Laptop HP ProBook Amazon 450</strong></p>\n<ul>\n    <li>Harga: Rp. 15.250.000</li>\n    <li>Rating: 3.8</li>\n    <li>Deskripsi: HP ProBook 450 adalah lini laptop bisnis 15,6 inci yang populer di Amazon, menawarkan keseimbangan antara performa dan portabilitas untuk produktivitas.</li>\n</ul>\n<p><img src=\"/static/data/Product/Laptop HP Amazon.jpg\" alt=\"Laptop HP ProBook Amazon 450\" style=\"max-width: 150px; border-radius: 8px; display: block; margin: 10px 0; border: 1px solid #ddd;\"></p>\n<p><strong>2. Laptop MacBook Air</strong></p>\n<ul>\n    <li>Harga: Rp. 10.250.000</li>\n    <li>Rating: 4.6</li>\n    <li>Deskripsi: MacBook Air adalah laptop ultra tipis dan ringan yang tersedia dalam ukuran 13 inci dan 15 inci, ditenagai oleh chip seri M Apple yang cepat untuk performa tinggi.</li>\n</ul>\n<p><img src=\"/static/data/Product/Laptop Macbook Air.jpg\" alt=\"Laptop MacBook Air\" style=\"max-width: 150px; border-radius: 8px; display: block; margin: 10px 0; border: 1px solid #ddd;\"></p>\n<p><strong>3. Laptop ASUS Vivobook 14</strong></p>\n<ul>\n    <li>Harga: Rp. 7.850.000</li>\n    <li>Rating: 4.5</li>\n    <li>Deskripsi: ASUS Vivobook 14 adalah laptop 14-inci yang stylish, ringan, dan andal untuk produktivitas harian, pelajar, atau pekerja kantoran.</li>\n</ul>\n<p><img src=\"/static/data/Product/Laptop Asus Vivobook.jpg\" alt=\"Laptop ASUS Vivobook 14\" style=\"max-width: 150px; border-radius: 8px; display: block; margin: 10px 0; border: 1px solid #ddd;\"></p>\n<p><strong>4. Laptop Acer Aspire 3</strong></p>\n<ul>\n    <li>Harga: Rp. 8.250.000</li>\n    <li>Rating: 4.4</li>\n    <li>Deskripsi: Acer Aspire adalah seri laptop serbaguna dengan harga terjangkau hingga menengah yang dirancang untuk komputasi sehari-hari, pelajar, dan profesional.</li>\n</ul>\n<p><img src=\"/static/data/Product/Laptop Acer Aspire.jpg\" alt=\"Laptop Acer Aspire 3\" style=\"max-width: 150px; border-radius: 8px; display: block; margin: 10px 0; border: 1px solid #ddd;\"></p>\n<p>Kalau ada yang ingin kamu tanyakan lebih lanjut atau butuh rekomendasi lainnya, jangan ragu untuk bertanya!</p>",
-                "image": "",
-                "image_mime": "",
-                "algo": "general",
-                "latency": 9.73,
-                "eval": {
-                    "prompt_tokens": 28171,
-                    "completion_tokens": 629,
-                    "total_tokens": 28800
-                }
-            }
-        ],
-        "preferences": {
-            "merek_favorit": [],
-            "kategori_minat": [
-                "Laptop"
-            ],
-            "budget": "Bebas",
-            "bahasa_dominan": "Indonesia"
-        }
-    },
-    {
         "id": "a638baa7-2353-449e-9190-470b14f6ecec",
         "title": "carikan portable",
         "messages": [
@@ -232,6 +359,20 @@
                     "completion_tokens": 486,
                     "total_tokens": 29179
                 }
+            },
+            {
+                "user": "Bagaimana jika budget saya hanya Rp 200.000 untuk potable?",
+                "ai": "<p>Sayangnya, untuk budget Rp 200.000, tidak ada pilihan portable SSD yang sesuai dengan anggaran tersebut. Namun, saya bisa merekomendasikan alternatif lain yang mungkin lebih terjangkau, seperti aksesori atau perangkat penyimpanan yang lebih kecil.</p>\n<p>Jika kamu tertarik, saya bisa membantu mencarikan produk lain yang sesuai dengan budget tersebut. Silakan beri tahu!</p>",
+                "image": "",
+                "image_mime": "",
+                "algo": "general",
+                "latency": 4.5,
+                "eval": {
+                    "prompt_tokens": 29230,
+                    "completion_tokens": 76,
+                    "total_tokens": 29306
+                },
+                "usability_feedback": null
             }
         ],
         "preferences": {
@@ -239,7 +380,7 @@
             "kategori_minat": [
                 "Portable"
             ],
-            "budget": "Bebas",
+            "budget": "Murah / Terjangkau",
             "bahasa_dominan": "Indonesia"
         }
     },
@@ -294,83 +435,6 @@
         }
     },
     {
-        "id": "e6ffa26f-479b-4d63-be1b-c563b89885ae",
-        "title": "Tolong rekomendasikan lap...",
-        "messages": [
-            {
-                "user": "Tolong rekomendasikan laptop",
-                "ai": "<p>Berikut adalah rekomendasi laptop yang mungkin cocok untukmu:</p>\n<p><strong>1. Laptop HP ProBook Amazon 450</strong></p>\n<ul>\n    <li>Harga: Rp. 15.250.000</li>\n    <li>Rating: 3.8</li>\n    <li>Deskripsi: HP ProBook 450 adalah laptop bisnis 15,6 inci yang menawarkan keseimbangan antara performa dan portabilitas untuk produktivitas.</li>\n</ul>\n<p><img src=\"/static/data/Product/Laptop HP Amazon.jpg\" alt=\"Laptop HP ProBook Amazon 450\" style=\"max-width: 250px; border-radius: 8px; display: block; margin: 15px 0 30px 0; border: 1px solid #ddd;\"></p>\n<p>\ud83d\udca1 <strong>Mengapa cocok untukmu</strong>: Laptop ini dirancang untuk produktivitas, cocok untuk pekerjaan sehari-hari.</p>\n<p><strong>Kelebihan:</strong></p>\n<ul>\n    <li>Performa baik untuk tugas bisnis.</li>\n    <li>Layar besar 15,6 inci untuk kenyamanan visual.</li>\n</ul>\n\n<p><strong>Kekurangan:</strong></p>\n<ul>\n    <li>Rating tidak terlalu tinggi dibandingkan dengan model lain.</li>\n    <li>Harga cukup tinggi untuk pengguna rumahan.</li>\n</ul>\n\n<hr />\n<p><strong>2. Laptop ASUS Vivobook 14</strong></p>\n<ul>\n    <li>Harga: Rp. 7.850.000</li>\n    <li>Rating: 4.5</li>\n    <li>Deskripsi: ASUS Vivobook 14 adalah laptop 14-inci yang stylish, ringan, dan andal untuk produktivitas harian, pelajar, atau pekerja kantoran.</li>\n</ul>\n<p><img src=\"/static/data/Product/Laptop Asus Vivobook.jpg\" alt=\"Laptop ASUS Vivobook 14\" style=\"max-width: 250px; border-radius: 8px; display: block; margin: 15px 0 30px 0; border: 1px solid #ddd;\"></p>\n<p>\ud83d\udca1 <strong>Mengapa cocok untukmu</strong>: Laptop ini ringan dan stylish, ideal untuk pelajar dan pekerja kantoran.</p>\n<p><strong>Kelebihan:</strong></p>\n<ul>\n    <li>Desain stylish dan portabel.</li>\n    <li>Performa baik untuk tugas harian.</li>\n</ul>\n\n<p><strong>Kekurangan:</strong></p>\n<ul>\n    <li>Ukuran layar lebih kecil dibandingkan model lain.</li>\n    <li>Spesifikasi mungkin tidak cukup untuk tugas berat.</li>\n</ul>\n\n<hr />\n<p><strong>3. Laptop MacBook Air</strong></p>\n<ul>\n    <li>Harga: Rp. 10.250.000</li>\n    <li>Rating: 4.6</li>\n    <li>Deskripsi: MacBook Air adalah laptop ultra tipis dan ringan yang ditenagai oleh chip seri M Apple untuk performa tinggi.</li>\n</ul>\n<p><img src=\"/static/data/Product/Laptop Macbook Air.jpg\" alt=\"Laptop MacBook Air\" style=\"max-width: 250px; border-radius: 8px; display: block; margin: 15px 0 30px 0; border: 1px solid #ddd;\"></p>\n<p>\ud83d\udca1 <strong>Mengapa cocok untukmu</strong>: Laptop ini menawarkan performa tinggi dalam desain yang sangat portabel.</p>\n<p><strong>Kelebihan:</strong></p>\n<ul>\n    <li>Desain ultra tipis dan ringan.</li>\n    <li>Performa tinggi dengan chip M Apple.</li>\n</ul>\n\n<p><strong>Kekurangan:</strong></p>\n<ul>\n    <li>Harga lebih tinggi dibandingkan laptop lain.</li>\n    <li>Port terbatas dibandingkan dengan laptop Windows.</li>\n</ul>\n\n<hr />\n<p>Semoga rekomendasi ini membantu! Jika ada pertanyaan lebih lanjut atau butuh rekomendasi lain, silakan beri tahu.</p>",
-                "image": "",
-                "image_mime": "",
-                "algo": "recommendation",
-                "latency": 19.91,
-                "eval": {
-                    "prompt_tokens": 28211,
-                    "completion_tokens": 807,
-                    "total_tokens": 29018
-                },
-                "usability_feedback": "up"
-            }
-        ],
-        "preferences": {
-            "merek_favorit": [],
-            "kategori_minat": [],
-            "budget": "Bebas",
-            "bahasa_dominan": "Indonesia"
-        }
-    },
-    {
-        "id": "44612596-04ae-4a00-8c52-2305adc9c8a7",
-        "title": "Beri saya rekomendasi pro...",
-        "messages": [
-            {
-                "user": "Beri saya rekomendasi produk yang cocok berdasarkan obrolan kita sejauh ini",
-                "ai": "<p>Halo! Senang bisa membantu kamu. Berdasarkan gambar produk yang kamu berikan, berikut adalah beberapa rekomendasi produk yang cocok:</p>\n<p><strong>1. Portable SSD V-Gen</strong></p>\n<ul>\n    <li>Harga: Rp. 1.750.000</li>\n    <li>Rating: 4.8</li>\n    <li>Deskripsi: Portable SSD dengan kecepatan tinggi, cocok untuk gaming, editing video, backup data besar, dan transfer file cepat.</li>\n</ul>\n<p><img src=\"/static/data/Product/Portable SSD V-Gen Platinum.jpg\" alt=\"Portable SSD V-Gen\" style=\"max-width: 150px; border-radius: 8px; display: block; margin: 10px 0; border: 1px solid #ddd;\"></p>\n<p><strong>2. Sata 3 V-Gen 256 GB</strong></p>\n<ul>\n    <li>Harga: Rp. 1.250.000</li>\n    <li>Rating: 4.6</li>\n    <li>Deskripsi: SSD V-Gen 256GB SATA III dirancang untuk meningkatkan kecepatan komputer/laptop dengan kecepatan baca hingga 530 MB/s dan tulis hingga 477 MB/s.</li>\n</ul>\n<p><img src=\"/static/data/Product/Sata 3 V-Gen 256 GB.jpg\" alt=\"Sata 3 V-Gen 256 GB\" style=\"max-width: 150px; border-radius: 8px; display: block; margin: 10px 0; border: 1px solid #ddd;\"></p>\n<p><strong>3. Portable SSD Samsung</strong></p>\n<ul>\n    <li>Harga: Rp. 1.325.000</li>\n    <li>Rating: 4.7</li>\n    <li>Deskripsi: Portable SSD Samsung adalah solusi penyimpanan eksternal berperforma tinggi, ringkas, dan andal, dengan kecepatan transfer data cepat (hingga 2.000 MB/s).</li>\n</ul>\n<p><img src=\"/static/data/Product/Portable SSD Samsung.jpg\" alt=\"Portable SSD Samsung\" style=\"max-width: 150px; border-radius: 8px; display: block; margin: 10px 0; border: 1px solid #ddd;\"></p>\n<p>Semoga rekomendasi ini membantu! Jika ada pertanyaan lebih lanjut atau butuh informasi lain, jangan ragu untuk bertanya.</p>",
-                "image": "",
-                "image_mime": "",
-                "algo": "general",
-                "latency": 6.91,
-                "eval": {
-                    "prompt_tokens": 28186,
-                    "completion_tokens": 502,
-                    "total_tokens": 28688
-                },
-                "usability_feedback": null
-            }
-        ],
-        "preferences": {
-            "merek_favorit": [],
-            "kategori_minat": [],
-            "budget": "Bebas",
-            "bahasa_dominan": "Indonesia"
-        }
-    },
-    {
-        "id": "d4141b32-d819-420a-a5db-5e279cfe97f0",
-        "title": "Beri saya rekomendasi pro...",
-        "messages": [
-            {
-                "user": "Beri saya rekomendasi produk yang cocok berdasarkan obrolan kita sejauh ini",
-                "ai": "<p>Berikut adalah beberapa rekomendasi produk yang cocok berdasarkan preferensi Anda:</p>\n<p><strong>1. Portable SSD V-Gen</strong></p>\n<ul>\n    <li>Harga: Rp. 1.750.000</li>\n    <li>Rating: 4.8</li>\n    <li>Deskripsi: Portable SSD dengan kecepatan tinggi, cocok untuk gaming, editing video, backup data besar, dan transfer file cepat.</li>\n</ul>\n<p><img src=\"/static/data/Product/Portable SSD V-Gen Platinum.jpg\" alt=\"Portable SSD V-Gen\" style=\"max-width: 250px; border-radius: 8px; display: block; margin: 15px 0 30px 0; border: 1px solid #ddd;\"></p>\n<p>\ud83d\udca1 <strong>Mengapa cocok untukmu</strong>: Memiliki kecepatan transfer yang tinggi, ideal untuk kebutuhan penyimpanan data besar.</p>\n<p><strong>Kelebihan:</strong></p>\n<ul>\n    <li>Kecepatan baca/tulis yang tinggi.</li>\n    <li>Desain portabel dan kompak.</li>\n    <li>Cocok untuk berbagai keperluan seperti gaming dan editing.</li>\n</ul>\n\n<p><strong>Kekurangan:</strong></p>\n<ul>\n    <li>Harga yang relatif lebih tinggi dibandingkan HDD tradisional.</li>\n</ul>\n\n<hr />\n<p><strong>2. Sata 3 V-Gen 256 GB</strong></p>\n<ul>\n    <li>Harga: Rp. 1.250.000</li>\n    <li>Rating: 4.6</li>\n    <li>Deskripsi: SSD V-Gen 256GB SATA III dirancang untuk meningkatkan kecepatan komputer/laptop dengan kecepatan baca hingga 530 MB/s dan tulis hingga 477 MB/s.</li>\n</ul>\n<p><img src=\"/static/data/Product/Sata 3 V-Gen 256 GB.jpg\" alt=\"Sata 3 V-Gen 256 GB\" style=\"max-width: 250px; border-radius: 8px; display: block; margin: 15px 0 30px 0; border: 1px solid #ddd;\"></p>\n<p>\ud83d\udca1 <strong>Mengapa cocok untukmu</strong>: Meningkatkan performa komputer/laptop dengan harga yang lebih terjangkau.</p>\n<p><strong>Kelebihan:</strong></p>\n<ul>\n    <li>Kecepatan baca dan tulis yang baik.</li>\n    <li>Harga yang lebih terjangkau dibandingkan SSD eksternal.</li>\n</ul>\n\n<p><strong>Kekurangan:</strong></p>\n<ul>\n    <li>Hanya dapat digunakan sebagai penyimpanan internal.</li>\n</ul>\n\n<hr />\n<p><strong>3. Portable SSD Samsung</strong></p>\n<ul>\n    <li>Harga: Rp. 1.325.000</li>\n    <li>Rating: 4.7</li>\n    <li>Deskripsi: Portable SSD Samsung adalah solusi penyimpanan eksternal berperforma tinggi, ringkas, dan andal, dengan kecepatan transfer data cepat hingga 2.000 MB/s.</li>\n</ul>\n<p><img src=\"/static/data/Product/Portable SSD Samsung.jpg\" alt=\"Portable SSD Samsung\" style=\"max-width: 250px; border-radius: 8px; display: block; margin: 15px 0 30px 0; border: 1px solid #ddd;\"></p>\n<p>\ud83d\udca1 <strong>Mengapa cocok untukmu</strong>: Kecepatan transfer yang sangat tinggi dan desain yang elegan, cocok untuk penggunaan profesional.</p>\n<p><strong>Kelebihan:</strong></p>\n<ul>\n    <li>Kecepatan transfer data yang sangat cepat.</li>\n    <li>Desain yang kompak dan stylish.</li>\n</ul>\n\n<p><strong>Kekurangan:</strong></p>\n<ul>\n    <li>Harga yang lebih tinggi dibandingkan dengan SSD lainnya.</li>\n</ul>\n\n<hr />\n<p>Semoga rekomendasi ini membantu Anda dalam memilih produk yang sesuai!</p>",
-                "image": "",
-                "image_mime": "",
-                "algo": "recommendation",
-                "latency": 15.77,
-                "eval": {
-                    "prompt_tokens": 28222,
-                    "completion_tokens": 806,
-                    "total_tokens": 29028
-                }
-            }
-        ],
-        "preferences": {
-            "merek_favorit": [],
-            "kategori_minat": [],
-            "budget": "Bebas",
-            "bahasa_dominan": "Indonesia"
-        }
-    },
-    {
         "id": "9f7845b2-8163-4097-968b-72a97ebde209",
         "title": "carikan laptop seperti di...",
         "messages": [
@@ -415,11 +479,41 @@
                     "completion_tokens": 971,
                     "total_tokens": 29193
                 }
+            },
+            {
+                "user": "carikan yang cocok untuk laptop macbook air",
+                "ai": "<p>Tentu! Berikut adalah beberapa produk yang cocok untuk digunakan dengan MacBook Air:</p>\n<p><strong>1. Portable SSD V-Gen</strong></p>\n<ul>\n    <li>Harga: Rp. 1.750.000</li>\n    <li>Rating: 4.8</li>\n    <li>Deskripsi: Portable SSD dengan kecepatan tinggi, cocok untuk gaming, editing video, backup data besar, dan transfer file cepat.</li>\n</ul>\n<p><img src=\"/static/data/Product/Portable SSD V-Gen Platinum.jpg\" alt=\"Portable SSD V-Gen\" style=\"max-width: 250px; border-radius: 8px; display: block; margin: 15px 0 30px 0; border: 1px solid #ddd;\"></p>\n<p><strong>2. Portable SSD Samsung</strong></p>\n<ul>\n    <li>Harga: Rp. 1.325.000</li>\n    <li>Rating: 4.7</li>\n    <li>Deskripsi: Portable SSD Samsung adalah solusi penyimpanan eksternal berperforma tinggi, ringkas, dan andal, dengan kecepatan transfer data cepat (hingga 2.000 MB/s).</li>\n</ul>\n<p><img src=\"/static/data/Product/Portable SSD Samsung.jpg\" alt=\"Portable SSD Samsung\" style=\"max-width: 250px; border-radius: 8px; display: block; margin: 15px 0 30px 0; border: 1px solid #ddd;\"></p>\n<p><strong>3. Sata 3 V-Gen 256 GB</strong></p>\n<ul>\n    <li>Harga: Rp. 1.250.000</li>\n    <li>Rating: 4.6</li>\n    <li>Deskripsi: SSD V-Gen 256GB SATA III dirancang untuk meningkatkan kecepatan komputer/laptop dengan kecepatan baca hingga 530 MB/s dan tulis hingga 477 MB/s.</li>\n</ul>\n<p><img src=\"/static/data/Product/Sata 3 V-Gen 256 GB.jpg\" alt=\"Sata 3 V-Gen 256 GB\" style=\"max-width: 250px; border-radius: 8px; display: block; margin: 15px 0 30px 0; border: 1px solid #ddd;\"></p>\n<p>Semua produk ini sangat cocok untuk meningkatkan performa MacBook Air kamu. Jika ada yang ingin ditanyakan lebih lanjut, silakan beri tahu!</p>",
+                "image": "",
+                "image_mime": "",
+                "algo": "general",
+                "latency": 10.92,
+                "eval": {
+                    "prompt_tokens": 29260,
+                    "completion_tokens": 517,
+                    "total_tokens": 29777
+                }
+            },
+            {
+                "user": "carikan yang cocok untuk laptop macbook air",
+                "ai": "<p>Tentu! Berikut adalah beberapa produk yang cocok untuk digunakan dengan MacBook Air:</p>\n<p><strong>1. Portable SSD V-Gen</strong></p>\n<ul>\n    <li>Harga: Rp. 1.750.000</li>\n    <li>Rating: 4.8</li>\n    <li>Deskripsi: Portable SSD dengan kecepatan tinggi, cocok untuk gaming, editing video, backup data besar, dan transfer file cepat.</li>\n</ul>\n<p><img src=\"/static/data/Product/Portable SSD V-Gen Platinum.jpg\" alt=\"Portable SSD V-Gen\" style=\"max-width: 250px; border-radius: 8px; display: block; margin: 15px 0 30px 0; border: 1px solid #ddd;\"></p>\n<p><strong>2. Portable SSD Samsung</strong></p>\n<ul>\n    <li>Harga: Rp. 1.325.000</li>\n    <li>Rating: 4.7</li>\n    <li>Deskripsi: Portable SSD Samsung adalah solusi penyimpanan eksternal berperforma tinggi, ringkas, dan andal, dengan kecepatan transfer data cepat (hingga 2.000 MB/s).</li>\n</ul>\n<p><img src=\"/static/data/Product/Portable SSD Samsung.jpg\" alt=\"Portable SSD Samsung\" style=\"max-width: 250px; border-radius: 8px; display: block; margin: 15px 0 30px 0; border: 1px solid #ddd;\"></p>\n<p><strong>3. Sata 3 V-Gen 256 GB</strong></p>\n<ul>\n    <li>Harga: Rp. 1.250.000</li>\n    <li>Rating: 4.6</li>\n    <li>Deskripsi: SSD V-Gen 256GB SATA III dirancang untuk meningkatkan kecepatan komputer/laptop dengan kecepatan baca hingga 530 MB/s dan tulis hingga 477 MB/s.</li>\n</ul>\n<p><img src=\"/static/data/Product/Sata 3 V-Gen 256 GB.jpg\" alt=\"Sata 3 V-Gen 256 GB\" style=\"max-width: 250px; border-radius: 8px; display: block; margin: 15px 0 30px 0; border: 1px solid #ddd;\"></p>\n<p>Semua produk ini sangat cocok untuk meningkatkan performa MacBook Air kamu. Jika ada yang ingin ditanyakan lebih lanjut, silakan beri tahu!</p>",
+                "image": "",
+                "image_mime": "",
+                "algo": "general",
+                "latency": 7.7,
+                "eval": {
+                    "prompt_tokens": 29819,
+                    "completion_tokens": 517,
+                    "total_tokens": 30336
+                }
             }
         ],
         "preferences": {
-            "merek_favorit": [],
-            "kategori_minat": [],
+            "merek_favorit": [
+                "Apple"
+            ],
+            "kategori_minat": [
+                "Laptop"
+            ],
             "budget": "Bebas",
             "bahasa_dominan": "Indonesia"
         }
@@ -524,11 +618,26 @@
                     "total_tokens": 29141
                 },
                 "usability_feedback": null
+            },
+            {
+                "user": "untuk SSD yang mana",
+                "ai": "<p>Hai! Dari gambar yang kamu berikan, sepertinya kamu sedang mencari informasi tentang SSD. Berikut adalah beberapa pilihan SSD yang relevan:</p>\n<p><strong>1. Portable SSD V-Gen</strong></p>\n<ul>\n    <li>Harga: Rp. 1.750.000</li>\n    <li>Rating: 4.8</li>\n    <li>Deskripsi: Portable SSD dengan kecepatan tinggi, cocok untuk gaming, editing video, backup data besar, dan transfer file cepat.</li>\n</ul>\n<p><img src=\"/static/data/Product/Portable SSD V-Gen Platinum.jpg\" alt=\"Portable SSD V-Gen\" style=\"max-width: 250px; border-radius: 8px; display: block; margin: 15px 0 30px 0; border: 1px solid #ddd;\"></p>\n<p><strong>2. Sata 3 V-Gen 256 GB</strong></p>\n<ul>\n    <li>Harga: Rp. 1.250.000</li>\n    <li>Rating: 4.6</li>\n    <li>Deskripsi: SSD V-Gen 256GB SATA III dirancang untuk meningkatkan kecepatan komputer/laptop dengan kecepatan baca hingga 530 MB/s dan tulis hingga 477 MB/s.</li>\n</ul>\n<p><img src=\"/static/data/Product/Sata 3 V-Gen 256 GB.jpg\" alt=\"Sata 3 V-Gen 256 GB\" style=\"max-width: 250px; border-radius: 8px; display: block; margin: 15px 0 30px 0; border: 1px solid #ddd;\"></p>\n<p><strong>3. Portable SSD Samsung</strong></p>\n<ul>\n    <li>Harga: Rp. 1.325.000</li>\n    <li>Rating: 4.7</li>\n    <li>Deskripsi: Portable SSD Samsung adalah solusi penyimpanan eksternal berperforma tinggi, ringkas, dan andal, dengan kecepatan transfer data cepat (hingga 2.000 MB/s).</li>\n</ul>\n<p><img src=\"/static/data/Product/Portable SSD Samsung.jpg\" alt=\"Portable SSD Samsung\" style=\"max-width: 250px; border-radius: 8px; display: block; margin: 15px 0 30px 0; border: 1px solid #ddd;\"></p>\n<p>Dari ketiga pilihan ini, jika kamu mencari kecepatan transfer yang tinggi dan portabilitas, <strong>Portable SSD Samsung</strong> bisa jadi pilihan yang sangat baik. Namun, jika kamu lebih suka SSD internal, <strong>Sata 3 V-Gen 256 GB</strong> adalah pilihan yang bagus untuk meningkatkan performa laptop atau komputer.</p>\n<p>Jika ada yang ingin kamu tanyakan lebih lanjut, jangan ragu untuk bertanya!</p>",
+                "image": "",
+                "image_mime": "",
+                "algo": "general",
+                "latency": 8.87,
+                "eval": {
+                    "prompt_tokens": 29207,
+                    "completion_tokens": 574,
+                    "total_tokens": 29781
+                }
             }
         ],
         "preferences": {
             "merek_favorit": [],
-            "kategori_minat": [],
+            "kategori_minat": [
+                "Ssd"
+            ],
             "budget": "Bebas",
             "bahasa_dominan": "Indonesia"
         }
@@ -1147,12 +1256,28 @@
                     "completion_tokens": 475,
                     "total_tokens": 28715
                 }
+            },
+            {
+                "user": "saya mau portable SSD V-Gen",
+                "ai": "<p>Tentu! Berikut adalah informasi tentang <strong>Portable SSD V-Gen</strong> yang kamu cari:</p>\n<p><strong>1. Portable SSD V-Gen</strong></p>\n<ul>\n    <li>Harga: Rp. 1.750.000</li>\n    <li>Rating: 4.8</li>\n    <li>Deskripsi: Portable SSD dengan kecepatan tinggi, cocok untuk gaming, editing video, backup data besar, dan transfer file cepat.</li>\n</ul>\n<p><img src=\"/static/data/Product/Portable SSD V-Gen Platinum.jpg\" alt=\"Portable SSD V-Gen\" style=\"max-width: 150px; border-radius: 8px; display: block; margin: 10px 0; border: 1px solid #ddd;\"></p>\n<p>Kalau ada yang ingin kamu tanyakan lebih lanjut atau butuh bantuan lainnya, silakan beri tahu!</p>",
+                "image": "",
+                "image_mime": "",
+                "algo": "general",
+                "latency": 6.01,
+                "eval": {
+                    "prompt_tokens": 28700,
+                    "completion_tokens": 180,
+                    "total_tokens": 28880
+                }
             }
         ],
         "preferences": {
-            "merek_favorit": [],
+            "merek_favorit": [
+                "V-Gen"
+            ],
             "kategori_minat": [
-                "Portable"
+                "Portable",
+                "Portable Ssd"
             ],
             "budget": "Bebas",
             "bahasa_dominan": "Indonesia"

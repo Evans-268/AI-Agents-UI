@@ -76,9 +76,9 @@
     }
     
     #toggleSidebarBtn i::before {
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;                   
-    content: "\f00d";                   
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;                   
+    content: "\f00d" !important;                   
     }
 
     .btn-back, .btn-new-chat {

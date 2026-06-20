@@ -72,6 +72,7 @@
         {% endif %}
         <form action="/delete_multiple" method="POST" id="bulkDeleteForm" class="sidebar-form">
             <div class="sidebar-section-title">Terbaru</div>
+            <div id="bottom-of-chat"></div>
             
             <ul class="sidebar-menu">
                 {% if sessions|length == 0 %}
@@ -132,6 +133,7 @@
                 <span style="font-weight: 500;">AI Agents UI</span>
             </div>
         </div>
+        
         <section class="content-area">
             {% if chat_history|length == 0 and not error_msg %}
                 <div class="welcome-container">
@@ -250,6 +252,7 @@
                             <div class="dropdown-item" data-type="algo" data-value="comparative" data-label="Perbandingan">⚖️ Perbandingan</div>
                             <div class="dropdown-item" data-type="algo" data-value="extractive" data-label="Spesifikasi">📋 Spesifikasi</div>
                             <div class="dropdown-item" data-type="algo" data-value="abstractive" data-label="Ringkasan">📝 Ringkasan</div>
+                            <div class="dropdown-item" data-type="algo" data-value="what_if" data-label="Skenario What-If">🤔 Skenario What-If</div>
                             <div class="dropdown-item" data-type="algo" data-value="general" data-label="Percakapan">💬 Percakapan Biasa</div>
                         </div>
                     </div>

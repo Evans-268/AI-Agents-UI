@@ -1,5 +1,16 @@
 let isSubmitting = false;
 
+function scrollToBottom() {
+    const bottomDiv = document.getElementById('bottom-of-chat');
+
+    if (bottomDiv) {
+        bottomDiv.scrollIntoView({
+            behavior: 'smooth',
+            block: 'end'
+        });
+    }
+}
+
 function showLoadingVisuals(userText) {
     const sendBtn = document.getElementById('sendBtn');
     if (sendBtn) {
@@ -40,12 +51,7 @@ function showLoadingVisuals(userText) {
     `;
     historyContainer.insertAdjacentHTML('beforeend', loadingBubble);
 
-    const bottomDiv = document.getElementById('bottom-of-chat');
-    if (bottomDiv) {
-        bottomDiv.scrollIntoView({ behavior: 'smooth' });
-    } else {
-        window.scrollTo(0, document.body.scrollHeight);
-    }
+    scrollToBottom();
 }
 
 function triggerSmartRecommendation(btnElement) {
@@ -140,124 +146,172 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const chatForm = document.getElementById('chatForm');
     if (chatForm) {
-        chatForm.addEventListener('submit', function(event) {
-            if (isSubmitting) {
-                event.preventDefault(); 
-                return;
-            }
+        chatForm.addEventListener('submit', async function(event) {
+            event.preventDefault(); 
+            
+            if (isSubmitting) return;
             isSubmitting = true; 
+            
             const messageInput = document.getElementById('messageInput');
-            showLoadingVisuals(messageInput ? messageInput.value : '');
+            const userText = messageInput ? messageInput.value : '';
+            
+            showLoadingVisuals(userText);
+            
+            const formData = new FormData(chatForm);
+            
+            if (messageInput) messageInput.value = '';
+            removeChatImage();
+
+            try {
+                const response = await fetch('/chat', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (response.ok) {
+                    const htmlText = await response.text();
+                    
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(htmlText, 'text/html');
+                    
+                    const newAiWrappers = doc.querySelectorAll('.ai-wrapper');
+                    const latestAiWrapper = newAiWrappers[newAiWrappers.length - 1];
+
+                    if (latestAiWrapper) {
+                        const historyContainer = document.getElementById('chat-history-container');
+                        
+                        if (historyContainer && historyContainer.lastElementChild) {
+                            historyContainer.lastElementChild.remove();
+                        }
+                        
+                        historyContainer.appendChild(latestAiWrapper);
+                        
+                        const aiContent = latestAiWrapper.querySelector('.ai-content');
+                        if (aiContent) {
+                            runTypewriterEffect(aiContent);
+                        }
+                    }
+                } else {
+                    console.error("Gagal menghubungi server.");
+                }
+            } catch (error) {
+                console.error("Terjadi kesalahan:", error);
+            } finally {
+                isSubmitting = false;
+                const sendBtn = document.getElementById('sendBtn');
+                if (sendBtn) {
+                    sendBtn.disabled = false;
+                    sendBtn.innerHTML = '<i class="fas fa-paper-plane"></i>';
+                }
+            }
         });
     }
 
     const aiContents = document.querySelectorAll('.ai-content');
     if (aiContents.length > 0) {
         const lastAiContent = aiContents[aiContents.length - 1];
-        const lastAiWrapper = lastAiContent.closest('.ai-wrapper');
-
-        const evalMetrics = lastAiWrapper ? lastAiWrapper.querySelector('.eval-metrics') : null;
-        const usabilityFeedback = lastAiWrapper ? lastAiWrapper.querySelector('.usability-feedback') : null;
-        
-        if (evalMetrics) evalMetrics.style.opacity = '0';
-        if (usabilityFeedback) usabilityFeedback.style.opacity = '0';
-
-        const originalHTML = lastAiContent.innerHTML; 
-        lastAiContent.innerHTML = ''; 
-
-        const tokens = originalHTML.match(/(<[^>]+>)|([^<]+)/g) || [];
-        
-        let tokenIndex = 0;
-        let charIndex = 0;
-        let currentHTML = ''; 
-        const typingSpeed = 10; 
-        
-        let isTyping = true; 
-
-        function scrollToBottom() {
-            window.scrollTo({
-                top: document.documentElement.scrollHeight,
-                behavior: 'auto' 
-            });
-        }
-
-        function isNearBottom() {
-            const totalHeight = document.documentElement.scrollHeight;
-            const currentScroll = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
-            const windowHeight = window.innerHeight;
-            return (totalHeight - currentScroll - windowHeight) <= 150;
-        }
-
-        let autoScrollEnabled = isNearBottom();
-
-        function detectUserScrollIntent() {
-            if (!isTyping) return;
-            autoScrollEnabled = isNearBottom();
-        }
-
-        window.addEventListener('wheel', detectUserScrollIntent, { passive: true });
-        window.addEventListener('touchmove', detectUserScrollIntent, { passive: true });
-
-        function typeWriterSafe() {
-            if (tokenIndex < tokens.length) {
-                const currentToken = tokens[tokenIndex];
-
-                if (currentToken.startsWith('<')) {
-                    currentHTML += currentToken;
-                    lastAiContent.innerHTML = currentHTML;
-                    tokenIndex++;
-                    
-                    if (autoScrollEnabled) scrollToBottom(); 
-                    
-                    typeWriterSafe();
-                } else {
-                    if (charIndex < currentToken.length) {
-                        currentHTML += currentToken.charAt(charIndex);
-                        lastAiContent.innerHTML = currentHTML;
-                        charIndex++;
-                        
-                        if (autoScrollEnabled) scrollToBottom(); 
-                        
-                        setTimeout(typeWriterSafe, typingSpeed);
-                    } else {
-                        charIndex = 0;
-                        tokenIndex++;
-                        typeWriterSafe();
-                    }
-                }
-            } else {
-                isTyping = false; 
-                window.removeEventListener('wheel', detectUserScrollIntent);
-                window.removeEventListener('touchmove', detectUserScrollIntent);
-
-                if (evalMetrics) {
-                    evalMetrics.style.transition = 'opacity 0.5s ease-in';
-                    evalMetrics.style.opacity = '1';
-                }
-                if (usabilityFeedback) {
-                    usabilityFeedback.style.transition = 'opacity 0.5s ease-in';
-                    usabilityFeedback.style.opacity = '1';
-                }
-                
-                if (autoScrollEnabled) {
-                    window.scrollTo({
-                        top: document.documentElement.scrollHeight,
-                        behavior: 'smooth'
-                    });
-                }
-            }
-        }
-        
-        setTimeout(typeWriterSafe, 300);
+        runTypewriterEffect(lastAiContent);
     }
+
     const toggleSidebarBtn = document.getElementById('toggleSidebarBtn');
-    
     if (toggleSidebarBtn) {
         toggleSidebarBtn.addEventListener('click', function() {
             document.body.classList.toggle('sidebar-closed');
         });
     }
+    
 });
+
+function runTypewriterEffect(aiContentElement) {
+    const aiWrapper = aiContentElement.closest('.ai-wrapper');
+    const evalMetrics = aiWrapper ? aiWrapper.querySelector('.eval-metrics') : null;
+    const usabilityFeedback = aiWrapper ? aiWrapper.querySelector('.usability-feedback') : null;
+    
+    if (evalMetrics) evalMetrics.style.opacity = '0';
+    if (usabilityFeedback) usabilityFeedback.style.opacity = '0';
+
+    const originalHTML = aiContentElement.innerHTML; 
+    aiContentElement.innerHTML = ''; 
+
+    const tokens = originalHTML.match(/(<[^>]+>)|([^<]+)/g) || [];
+    
+    let tokenIndex = 0;
+    let charIndex = 0;
+    let currentHTML = ''; 
+    const typingSpeed = 10; 
+    let isTyping = true; 
+
+    function scrollToBottom() {
+        window.scrollTo({
+            top: document.documentElement.scrollHeight,
+            behavior: 'auto' 
+        });
+    }
+
+    function isNearBottom() {
+        const totalHeight = document.documentElement.scrollHeight;
+        const currentScroll = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+        const windowHeight = window.innerHeight;
+        return (totalHeight - currentScroll - windowHeight) <= 150;
+    }
+
+    let autoScrollEnabled = isNearBottom();
+
+    function detectUserScrollIntent() {
+        if (!isTyping) return;
+        autoScrollEnabled = isNearBottom();
+    }
+
+    window.addEventListener('wheel', detectUserScrollIntent, { passive: true });
+    window.addEventListener('touchmove', detectUserScrollIntent, { passive: true });
+
+    function typeWriterSafe() {
+        if (tokenIndex < tokens.length) {
+            const currentToken = tokens[tokenIndex];
+
+            if (currentToken.startsWith('<')) {
+                currentHTML += currentToken;
+                aiContentElement.innerHTML = currentHTML;
+                tokenIndex++;
+                if (autoScrollEnabled) scrollToBottom(); 
+                typeWriterSafe();
+            } else {
+                if (charIndex < currentToken.length) {
+                    currentHTML += currentToken.charAt(charIndex);
+                    aiContentElement.innerHTML = currentHTML;
+                    charIndex++;
+                    if (autoScrollEnabled) scrollToBottom(); 
+                    setTimeout(typeWriterSafe, typingSpeed);
+                } else {
+                    charIndex = 0;
+                    tokenIndex++;
+                    typeWriterSafe();
+                }
+            }
+        } else {
+            isTyping = false; 
+            window.removeEventListener('wheel', detectUserScrollIntent);
+            window.removeEventListener('touchmove', detectUserScrollIntent);
+
+            if (evalMetrics) {
+                evalMetrics.style.transition = 'opacity 0.5s ease-in';
+                evalMetrics.style.opacity = '1';
+            }
+            if (usabilityFeedback) {
+                usabilityFeedback.style.transition = 'opacity 0.5s ease-in';
+                usabilityFeedback.style.opacity = '1';
+            }
+            if (autoScrollEnabled) {
+                window.scrollTo({
+                    top: document.documentElement.scrollHeight,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    }
+    
+    setTimeout(typeWriterSafe, 300);
+}
 
 function showPreferenceModal(title, contentData) {
     const modal = document.getElementById('prefModal');
@@ -280,7 +334,7 @@ function showPreferenceModal(title, contentData) {
         modalBody.innerHTML = `
             <p>Belum ada riwayat terdeteksi untuk <strong>${title}</strong>.</p>
             <p style="color: var(--text-secondary); font-size: 12px; margin-top: 15px;">
-                <i class="fas fa-info-circle"></i> Mulai ngobrol dengan ShopAssist agar kami bisa mengenali preferensimu!
+                <i class="fas fa-info-circle"></i> Mulai ngobrol dengan AI Agents UI agar kami bisa mengenali preferensimu!
             </p>
         `;
     }

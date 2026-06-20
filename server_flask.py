@@ -248,7 +248,9 @@ def home():
         if manual_algo != 'auto':
             summary_algo = manual_algo
         else:
-            if any(kata in query_huruf_kecil for kata in ['bandingkan', 'perbandingan', 'beda', 'vs', 'mending mana', 'pilih mana']):
+            if any(kata in query_huruf_kecil for kata in ['bagaimana jika', 'seandainya', 'alternatif', 'kalau budget', 'misalkan']):
+                summary_algo = 'what_if'
+            elif any(kata in query_huruf_kecil for kata in ['bandingkan', 'perbandingan', 'beda', 'vs', 'mending mana', 'pilih mana']):
                 summary_algo = 'comparative'
             elif any(kata in query_huruf_kecil for kata in ['singkat', 'ringkas', 'padat', 'kesimpulan', 'intinya']):
                 summary_algo = 'abstractive'

@@ -216,6 +216,8 @@ def ask_ai(user_query, product_data, history, user_image_bytes, summary_algo, pr
         algo_instruction = "TUGAS: Comparative Summarization. Bandingkan produk secara terstruktur. Soroti 'Kelebihan' & 'Kekurangan'. \n\nATURAN WAJIB PERBANDINGAN:\n1. FILTER DATA: Analisis permintaan pengguna (misal meminta 'laptop'), lalu HANYA cari dan bandingkan produk di [Data Produk] yang sesuai dengan kata kunci tersebut.\n2. JANGAN asal membandingkan produk dari urutan teratas jika tidak relevan dengan permintaan pengguna.\n3. Kamu SANGAT DISARANKAN menggunakan format TABEL HTML (<table>) untuk membandingkan spesifikasi, harga, kelebihan, atau kekurangan antar-produk yang RELEVAN agar terlihat rapi dan modular."
     elif summary_algo == 'recommendation':
         algo_instruction = "TUGAS: Recommendation. Berikan 2-3 rekomendasi produk yang PALING COCOK berdasarkan '[Preferensi User Saat Ini]' atau permintaan spesifiknya di prompt. WAJIB sertakan poin '💡 Mengapa cocok untukmu' pada setiap produk, 'Kelebihan', dan 'Kekurangan' menggunakan format list HTML (<ul><li>) yang rapi atau tabel perbandingan di akhir jika diperlukan."
+    elif summary_algo == 'what_if':
+        algo_instruction = "TUGAS: What-If Scenario (Skenario Hipotetis). Pengguna akan memberikan skenario pengandaian (misalnya: 'tampilkan alternatif jika budget di bawah 50rb', 'bagaimana jika saya butuh untuk gaming', atau 'tampilkan merek selain yang saya suka'). \n\nATURAN WAJIB WHAT-IF:\n1. Sesuaikan rekomendasi produk SEPENUHNYA berdasarkan skenario hipotetis pengguna.\n2. Abaikan sementara preferensi budget/merek utama pengguna JIKA bertentangan dengan skenario yang diminta.\n3. Berikan 2-3 alternatif produk yang sesuai dengan skenario baru, dan jelaskan mengapa ini merupakan alternatif yang bagus menggunakan format list HTML (<ul><li>)."
     elif summary_algo == 'general':
         algo_instruction = "TUGAS: General Chat. Jawab sapaan atau pertanyaan umum pengguna dengan ramah, santai, dan natural. Jika pengguna tidak menanyakan produk, jangan paksakan format rekomendasi atau tabel. Cukup jawab layaknya asisten yang siap membantu."
 
@@ -224,7 +226,7 @@ def ask_ai(user_query, product_data, history, user_image_bytes, summary_algo, pr
     budget_str = preferences.get("budget", "Bebas")
     bahasa_str = preferences.get("bahasa_dominan", "Indonesia")
 
-    text_prompt = f"""Kamu adalah 'ShopAssist', asisten belanja AI.
+    text_prompt = f"""Kamu adalah 'AI Agents UI', asisten belanja AI.
 
 {algo_instruction}
 
