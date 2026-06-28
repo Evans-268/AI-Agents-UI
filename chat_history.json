@@ -1,5 +1,34 @@
 [
     {
+        "id": "8d26df67-7843-41be-920f-65b787e57bda",
+        "title": "carikan Samsung Galaxy Ta...",
+        "messages": [
+            {
+                "user": "carikan Samsung Galaxy Tab S9 Book Cover Keyboard AI Key - Slim",
+                "ai": "<p>Kami tidak memiliki Samsung Galaxy Tab S9 Book Cover Keyboard AI Key - Slim. Namun, Anda mungkin tertarik dengan produk alternatif dari Samsung, yaitu <strong>Samsung Portable SSD</strong>.</p>\n<ol>\n<li><strong>Samsung Portable SSD</strong></li>\n</ol>\n<ul>\n    <li>Harga: Rp. 1.325.000</li>\n    <li>Rating: 4.7</li>\n    <li>Deskripsi: Portable SSD Samsung adalah solusi penyimpanan eksternal berperforma tinggi, ringkas, dan andal, dengan kecepatan transfer data cepat hingga 2.000 MB/s.</li>\n</ul>\n<p><img src=\"/static/data/Product/Portable SSD Samsung.jpg\" alt=\"Samsung Portable SSD\" style=\"max-width: 150px; border-radius: 8px; display: block; margin: 10px 0; border: 1px solid #ddd;\"></p>",
+                "image": "",
+                "image_mime": "",
+                "algo": "abstractive",
+                "latency": 3.24,
+                "eval": {
+                    "prompt_tokens": 28163,
+                    "completion_tokens": 178,
+                    "total_tokens": 28341
+                }
+            }
+        ],
+        "preferences": {
+            "merek_favorit": [
+                "Samsung"
+            ],
+            "kategori_minat": [
+                "Tablet, Aksesoris"
+            ],
+            "budget": "Bebas",
+            "bahasa_dominan": "Indonesia"
+        }
+    },
+    {
         "id": "b3045534-8edf-42ac-91ce-3be79e4d8025",
         "title": "Bagaimana jika budget say...",
         "messages": [
@@ -245,7 +274,8 @@
                     "prompt_tokens": 29271,
                     "completion_tokens": 514,
                     "total_tokens": 29785
-                }
+                },
+                "usability_feedback": null
             }
         ],
         "preferences": {
