@@ -15,7 +15,6 @@ function showLoadingVisuals(userText) {
     const sendBtn = document.getElementById('sendBtn');
     if (sendBtn) {
         sendBtn.disabled = true;
-        sendBtn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i>'; 
     }
 
     let historyContainer = document.getElementById('chat-history-container');
@@ -231,6 +230,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (sendBtn) {
                     sendBtn.disabled = false;
                     sendBtn.innerHTML = '<i class="fas fa-paper-plane"></i>';
+                    sendBtn.style.opacity = '1'; 
                 }
             }
         });
@@ -604,5 +604,86 @@ window.addEventListener('click', function(event) {
         document.querySelectorAll('.chat-options-menu').forEach(menu => {
             menu.classList.remove('show');
         });
+    }
+});
+
+function renameChat(sessionId, currentTitle) {
+    const newTitle = prompt("Masukkan nama baru untuk obrolan ini:", currentTitle);
+    
+    if (newTitle !== null && newTitle.trim() !== "" && newTitle !== currentTitle) {
+        document.getElementById('rename_session_id').value = sessionId;
+        document.getElementById('rename_new_title').value = newTitle.trim();
+        
+        document.getElementById('renameForm').submit();
+    }
+}
+
+function openPaymentModal(productName, productPrice) {
+    const modal = document.getElementById('paymentModal');
+    
+    document.getElementById('modalProductName').innerText = productName || 'Produk';
+    document.getElementById('modalProductPrice').innerText = productPrice || 'Rp -';
+
+    modal.style.display = 'flex'; 
+    
+    const statusDiv = document.getElementById('paymentStatus');
+    if(statusDiv) statusDiv.style.display = 'none';
+
+    const buttons = document.querySelectorAll('.btn-payment');
+    buttons.forEach(btn => {
+        btn.disabled = false;
+        btn.style.backgroundColor = 'var(--bg-main)';
+        btn.style.borderColor = 'var(--hover-bg)';
+        btn.style.color = 'var(--text-primary)';
+        
+        if (btn.getAttribute('data-original-html')) {
+            btn.innerHTML = btn.getAttribute('data-original-html');
+        } else {
+            btn.setAttribute('data-original-html', btn.innerHTML);
+        }
+    });
+}
+
+function closePaymentModal() {
+    const modal = document.getElementById('paymentModal');
+    if(modal) modal.style.display = 'none';
+}
+
+function processPayment(btnElement, method) {
+    const allButtons = document.querySelectorAll('.btn-payment');
+    
+    const currentPrice = document.getElementById('modalProductPrice').innerText;
+    
+    allButtons.forEach(btn => btn.disabled = true);
+
+    btnElement.innerHTML = '<i class="fas fa-circle-notch fa-spin" style="margin-right: 8px;"></i> Memproses...';
+    btnElement.style.borderColor = 'var(--accent-color)';
+
+    const statusDiv = document.getElementById('paymentStatus');
+    statusDiv.style.display = 'block';
+    statusDiv.style.color = 'var(--text-secondary)';
+    statusDiv.innerHTML = `Sedang menghubungi penyedia layanan ${method}...`;
+
+    setTimeout(() => {
+        btnElement.innerHTML = '<i class="fas fa-check-circle" style="margin-right: 8px;"></i> Berhasil';
+        btnElement.style.backgroundColor = 'rgba(76, 175, 80, 0.15)'; 
+        btnElement.style.borderColor = '#4CAF50';
+        btnElement.style.color = '#4CAF50';
+
+        statusDiv.style.color = '#4CAF50';
+        
+        statusDiv.innerHTML = `✅ Pembayaran ${currentPrice} menggunakan ${method} berhasil!`;
+
+        setTimeout(() => {
+            closePaymentModal();
+        }, 2500);
+
+    }, 2000);
+}
+
+window.addEventListener('click', function(event) {
+    const paymentModal = document.getElementById('paymentModal');
+    if (event.target === paymentModal) {
+        closePaymentModal();
     }
 });

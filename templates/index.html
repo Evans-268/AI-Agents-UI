@@ -82,17 +82,35 @@
             <li title="{{ session.title }}" class="chat-history-item {% if session.id == active_session_id %}active-session{% endif %}">
                 <div class="sidebar-item-layout">
                     
-                    <a href="/switch_chat/{{ session.id }}" class="sidebar-text" style="text-decoration: none; color: inherit; flex: 1;">
-                        <i class="far fa-comment-alt"></i> 
-                        <span>{{ session.title }}</span>
+                    <a href="/switch_chat/{{ session.id }}" class="sidebar-text" style="text-decoration: none; color: inherit; flex: 1; overflow: hidden; display: flex; align-items: center;">
+                        <i class="far fa-comment-alt" style="flex-shrink: 0;"></i> 
+                        
+                        <span style="flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-right: 8px;">
+                            {{ session.title }}
+                        </span>
+                        
+                        {% if session.pinned %}
+                            <i class="fas fa-thumbtack" style="font-size: 12px; color: var(--accent-color); flex-shrink: 0;"></i>
+                        {% endif %}
                     </a>
-                    
+
                     <div class="chat-item-options">
                         <button type="button" class="btn-options-toggle" onclick="toggleChatMenu(event, '{{ session.id }}')">
                             <i class="fas fa-ellipsis-h"></i>
                         </button>
                         
                         <div class="chat-options-menu" id="menu-{{ session.id }}">
+                            <button type="button" class="menu-action-btn" onclick="renameChat('{{ session.id }}', '{{ session.title | escape }}')">
+                                <i class="fas fa-pen"></i> Ganti nama
+                            </button>
+                            
+                            <form action="/pin_chat" method="POST" style="margin: 0;">
+                                <input type="hidden" name="session_id" value="{{ session.id }}">
+                                <button type="submit" class="menu-action-btn">
+                                    <i class="fas fa-thumbtack"></i> {% if session.pinned %}Lepaskan sematan{% else %}Sematkan obrolan{% endif %}
+                                </button>
+                            </form>
+
                             <form action="/delete_multiple" method="POST" style="margin: 0;">
                                 <input type="hidden" name="selected_chats" value="{{ session.id }}">
                                 <button type="submit" class="menu-action-btn delete-action">
@@ -298,6 +316,44 @@
         </footer>
 
     </main>
+
+    <form id="renameForm" action="/rename_chat" method="POST" style="display: none;">
+        <input type="hidden" name="session_id" id="rename_session_id">
+        <input type="hidden" name="new_title" id="rename_new_title">
+    </form>
+
+    <div id="paymentModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="paymentModalTitle" style="color: var(--text-primary);"><i class="fas fa-wallet" style="color: var(--accent-color);"></i> Simulasi Pembayaran</h3>
+                <button class="icon-btn close-modal" onclick="closePaymentModal()" title="Tutup">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="paymentModalBody" style="text-align: center;">
+                
+                <p style="margin-bottom: 20px; color: var(--text-secondary);">
+                    Membeli: <strong id="modalProductName" style="color: var(--text-primary);">Nama Produk</strong><br><br>
+                    Total Pembayaran:<br> 
+                    <strong id="modalProductPrice" style="color: var(--accent-color); font-size: 24px;">Rp 0</strong>
+                </p>
+
+                <div class="payment-methods" style="display: flex; flex-direction: column; gap: 10px;">
+                    <button class="btn-payment" onclick="processPayment(this, 'QRIS')">
+                        <i class="fas fa-qrcode" style="margin-right: 8px;"></i> QRIS
+                    </button>
+                    <button class="btn-payment" onclick="processPayment(this, 'Transfer Bank')">
+                        <i class="fas fa-university" style="margin-right: 8px;"></i> Transfer Bank (VA)
+                    </button>
+                    <button class="btn-payment" onclick="processPayment(this, 'E-Wallet')">
+                        <i class="fas fa-mobile-alt" style="margin-right: 8px;"></i> E-Wallet (OVO/GoPay)
+                    </button>
+                </div>
+
+                <div id="paymentStatus" style="margin-top: 20px; display: none; font-size: 14px; font-weight: 500;"></div>
+            </div>
+        </div>
+    </div>
 
     <script src="{{ url_for('static', filename='app.js') }}?v=2"></script>
     <script src="{{ url_for('static', filename='app_mobile.js') }}?v=1"></script>

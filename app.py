@@ -240,8 +240,8 @@ ATURAN KETAT:
    - Pada tag <table> gunakan: style="width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 14px;"
    - Pada tag <th> (Header) gunakan: style="background-color: var(--bg-sidebar); border: 1px solid var(--hover-bg); padding: 10px; text-align: left; color: var(--accent-color);"
    - Pada tag <td> (Isi baris) gunakan: style="border: 1px solid var(--hover-bg); padding: 10px; color: var(--text-primary);"
-5. FORMAT TAMPILAN PRODUK WAJIB: 
-   Kamu WAJIB menggunakan struktur tag HTML (ul dan li) di bawah ini persis untuk setiap produk. Gunakan teks tebal (bold) dengan menambahkan tanda bintang ganda (**) pada nomor urut dan nama produk agar format penomoran tidak rusak (contoh: ""1. Nama Produk""):
+5. FORMAT TAMPILAN PRODUK WAJIB (HANYA SAAT MENCARI/MEREKOMENDASIKAN): 
+   Jika pengguna sedang mencari atau meminta rekomendasi, kamu WAJIB menggunakan struktur tag HTML (ul dan li) di bawah ini persis untuk setiap produk. Gunakan teks tebal (bold) dengan menambahkan tanda bintang ganda (**) pada nomor urut dan nama produk agar format penomoran tidak rusak (contoh: ""1. Nama Produk""):
 
    "[Nomor Urut]. [Nama Produk]"
    <ul>
@@ -250,7 +250,17 @@ ATURAN KETAT:
        <li>Deskripsi: [Deskripsi singkat Produk]</li>
    </ul>
    <img src="[URL_GAMBAR]" alt="[Nama Produk]" style="max-width: 250px; border-radius: 8px; display: block; margin: 15px 0 30px 0; border: 1px solid #ddd;">
+   (PENTING: JANGAN gunakan format ini atau menampilkan ulang gambar produk jika pengguna sudah berada pada tahap konfirmasi ingin membayar/checkout).
+6. TAUTAN PEMBAYARAN (HANYA SAAT USER INGIN MEMBELI/CHECKOUT):
+   JIKA pengguna secara eksplisit memilih dan ingin membeli suatu produk (misalnya mengetik: "saya mau beli yang nomor 1", "checkout asus vivobook", atau "pesan yang ini"), berikan konfirmasi ramah dan kamu HANYA PERLU memunculkan link pembayaran berikut. JANGAN MENAMPILKAN ULANG GAMBAR ATAU SPESIFIKASI PRODUKNYA LAGI.
 
+   <div style="margin-top: 15px; margin-bottom: 25px;">
+       <span style="color: var(--text-secondary); font-size: 14px;">Silakan selesaikan pembayaran Anda melalui tautan berikut:</span><br>
+       <a href="#" onclick="event.preventDefault(); openPaymentModal('[Nama Produk]', '[Harga Produk]')" style="color: var(--accent-color); text-decoration: underline; text-underline-offset: 3px; font-weight: 500; cursor: pointer; font-size: 15px; display: inline-flex; align-items: center; gap: 6px; margin-top: 8px;">
+           <i class="fas fa-link"></i> Menuju Link Pembayaran
+       </a>
+   </div>
+   
    Aturan [URL_GAMBAR]:
    - Jika 'img' berawalan 'http': Tulis apa adanya. (Cth: <img src="http://web.com/1.jpg" alt="...">)
    - Jika BUKAN link internet: Tambahkan '/static/'. (Cth: <img src="/static/data/Product/x.jpg" alt="...">)

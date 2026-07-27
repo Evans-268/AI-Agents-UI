@@ -372,6 +372,36 @@ def delete_multiple_chats():
     save_chat_sessions(chat_sessions)    
     return redirect('/chat')
 
+@server.route('/rename_chat', methods=['POST'])
+@login_required
+def rename_chat():
+    global chat_sessions
+    session_id = request.form.get('session_id')
+    new_title = request.form.get('new_title')
+    
+    for s in chat_sessions:
+        if s['id'] == session_id:
+            s['title'] = new_title
+            break
+            
+    save_chat_sessions(chat_sessions)
+    return redirect('/chat')
+
+@server.route('/pin_chat', methods=['POST'])
+@login_required
+def pin_chat():
+    global chat_sessions
+    session_id = request.form.get('session_id')
+    
+    for s in chat_sessions:
+        if s['id'] == session_id:
+            s['pinned'] = not s.get('pinned', False)
+            break
+            
+    chat_sessions.sort(key=lambda x: x.get('pinned', False), reverse=True)
+    save_chat_sessions(chat_sessions)
+    return redirect('/chat')
+
 @server.route('/api/products', methods=['GET'])
 def api_get_products():
     try:
