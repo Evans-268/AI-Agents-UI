@@ -507,6 +507,27 @@ def get_comparison_accuracy():
         "accuracy_score": f"{accuracy_percentage}%"
     }), 200
 
+@server.route('/api/truncate_chat', methods=['POST'])
+@login_required
+def truncate_chat():
+    global chat_sessions, active_session_id
+    data = request.get_json()
+    
+    if not data or 'chat_index' not in data:
+        return jsonify({"status": "error", "message": "Index tidak diberikan"}), 400
+        
+    chat_idx = data.get('chat_index')
+    
+    current_session = next((s for s in chat_sessions if s["id"] == active_session_id), None)
+    
+    if current_session and chat_idx is not None and 0 <= chat_idx < len(current_session["messages"]):
+        current_session["messages"] = current_session["messages"][:chat_idx]
+        
+        save_chat_sessions(chat_sessions)
+        return jsonify({"status": "success", "message": "Riwayat chat berhasil dipotong untuk diedit"})
+        
+    return jsonify({"status": "error", "message": "Sesi atau indeks tidak valid"}), 400
+
 from pyngrok import ngrok 
 
 if __name__ == '__main__':

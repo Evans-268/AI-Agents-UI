@@ -295,6 +295,83 @@ body.sidebar-closed #toggleSidebarBtn i {
     margin-top: 40px;
 }
 
+.chat-history-item {
+    position: relative;
+}
+
+.chat-item-options {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.btn-options-toggle {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    display: none; 
+    transition: background-color 0.2s;
+}
+
+.chat-history-item:hover .btn-options-toggle {
+    display: block; 
+}
+
+.btn-options-toggle:hover {
+    background-color: var(--hover-bg);
+    color: var(--text-primary);
+}
+
+.chat-options-menu {
+    display: none; 
+    position: absolute;
+    right: 0;
+    top: 30px;
+    background-color: var(--bg-input);
+    border: 1px solid var(--hover-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    z-index: 1000;
+    min-width: 130px;
+    padding: 5px 0;
+    overflow: hidden;
+}
+
+.chat-options-menu.show {
+    display: block;
+    animation: fadeInMenu 0.15s ease-out;
+}
+
+.menu-action-btn {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    padding: 10px 15px;
+    color: var(--text-primary);
+    cursor: pointer;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.2s;
+}
+
+.menu-action-btn:hover {
+    background-color: var(--hover-bg);
+}
+
+.menu-action-btn.delete-action {
+    color: var(--danger);
+}
+
+.menu-action-btn.delete-action:hover {
+    background-color: rgba(255, 82, 82, 0.1);
+}
+
 .chat-wrapper {
     display: flex;
     width: 100%;
@@ -344,6 +421,98 @@ body.sidebar-closed #toggleSidebarBtn i {
     border-radius: 10px;
     display: block;
     margin-bottom: 10px;
+}
+
+.user-message {
+    position: relative; 
+}
+
+.edit-msg-btn {
+    position: absolute;
+    bottom: -15px; 
+    right: -10px;
+    
+    background: var(--bg-sidebar);
+    color: var(--text-secondary);
+    border: 1px solid var(--hover-bg);
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+    cursor: pointer;
+    display: none; 
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.user-message:hover .edit-msg-btn {
+    display: flex; 
+}
+
+.edit-msg-btn:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.inline-edit-container {
+    width: 100%;
+    max-width: 80%;
+    background-color: var(--bg-sidebar); /* Warna kotak sesuai dark mode */
+    padding: 15px 20px;
+    border-radius: 20px;
+    border: 1px solid var(--hover-bg);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
+}
+
+.inline-edit-textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-size: 15px;
+    resize: none;
+    outline: none;
+    font-family: inherit;
+    line-height: 1.5;
+    overflow-y: hidden; 
+    min-height: 40px;
+}
+
+.inline-edit-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.btn-edit-cancel, .btn-edit-save {
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-edit-cancel {
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--hover-bg);
+}
+.btn-edit-cancel:hover {
+    background-color: var(--hover-bg);
+}
+
+.btn-edit-save {
+    background-color: var(--text-primary); 
+    color: var(--bg-main); 
+    border: none;
+}
+.btn-edit-save:hover {
+    background-color: var(--accent-color);
 }
 
 .ai-content p { margin-bottom: 10px; }

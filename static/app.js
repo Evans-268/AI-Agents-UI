@@ -174,23 +174,52 @@ document.addEventListener('DOMContentLoaded', function() {
                     const parser = new DOMParser();
                     const doc = parser.parseFromString(htmlText, 'text/html');
                     
-                    const newAiWrappers = doc.querySelectorAll('.ai-wrapper');
-                    const latestAiWrapper = newAiWrappers[newAiWrappers.length - 1];
+                    const newHistoryContainer = doc.getElementById('chat-history-container');
+                    let currentHistoryContainer = document.getElementById('chat-history-container');
+                    
+                    if (newHistoryContainer) {
+                        if (currentHistoryContainer) {
+                            // AMBIL HANYA WRAPPER AI TERAKHIR DARI RESPONS SERVER
+                            const newAiWrappers = newHistoryContainer.querySelectorAll('.ai-wrapper');
+                            const latestAiWrapper = newAiWrappers[newAiWrappers.length - 1];
 
-                    if (latestAiWrapper) {
-                        const historyContainer = document.getElementById('chat-history-container');
-                        
-                        if (historyContainer && historyContainer.lastElementChild) {
-                            historyContainer.lastElementChild.remove();
-                        }
-                        
-                        historyContainer.appendChild(latestAiWrapper);
-                        
-                        const aiContent = latestAiWrapper.querySelector('.ai-content');
-                        if (aiContent) {
-                            runTypewriterEffect(aiContent);
+                            if (latestAiWrapper) {
+                                if (currentHistoryContainer.lastElementChild) {
+                                    currentHistoryContainer.lastElementChild.remove();
+                                }
+                                
+                                currentHistoryContainer.appendChild(latestAiWrapper);
+                                
+                                const aiContent = latestAiWrapper.querySelector('.ai-content');
+                                if (aiContent) {
+                                    runTypewriterEffect(aiContent);
+                                }
+                            }
+                        } else {
+                            const contentArea = document.querySelector('.content-area');
+                            if (contentArea) {
+                                contentArea.appendChild(newHistoryContainer);
+                                const allAiContents = newHistoryContainer.querySelectorAll('.ai-content');
+                                if (allAiContents.length > 0) {
+                                    const lastAiContent = allAiContents[allAiContents.length - 1];
+                                    runTypewriterEffect(lastAiContent);
+                                }
+                            }
                         }
                     }
+
+                    const newHistoryMenu = doc.querySelector('.sidebar-form .sidebar-menu');
+                    const currentHistoryMenu = document.querySelector('.sidebar-form .sidebar-menu');
+                    if (newHistoryMenu && currentHistoryMenu) {
+                        currentHistoryMenu.innerHTML = newHistoryMenu.innerHTML;
+                    }
+
+                    const newPrefMenu = doc.querySelector('.pref-menu');
+                    const currentPrefMenu = document.querySelector('.pref-menu');
+                    if (newPrefMenu && currentPrefMenu) {
+                        currentPrefMenu.innerHTML = newPrefMenu.innerHTML;
+                    }
+                    
                 } else {
                     console.error("Gagal menghubungi server.");
                 }
@@ -220,6 +249,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const sidebar = document.querySelector('.sidebar');
+    
+    if (sidebar) {
+        const savedScrollPosition = sessionStorage.getItem('sidebarScrollPosition');
+        
+        if (savedScrollPosition !== null) {
+            sidebar.scrollTop = parseInt(savedScrollPosition, 10);
+        }
+
+        sidebar.addEventListener('scroll', function() {
+            sessionStorage.setItem('sidebarScrollPosition', sidebar.scrollTop);
+        });
+    }
 });
 
 function runTypewriterEffect(aiContentElement) {
@@ -448,6 +493,116 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!aiModeMenu.contains(e.target) && e.target !== aiModeBtn) {
                 aiModeMenu.classList.remove('show');
             }
+        });
+    }
+});
+
+function showInlineEdit(btnElement) {
+    const wrapper = btnElement.closest('.user-wrapper');
+    const staticView = wrapper.querySelector('.static-msg-view');
+    const editView = wrapper.querySelector('.edit-msg-view');
+    const textarea = editView.querySelector('.inline-edit-textarea');
+
+    staticView.style.display = 'none';
+    editView.style.display = 'block';
+    
+    autoResizeTextarea(textarea);
+    
+    textarea.focus();
+    textarea.setSelectionRange(textarea.value.length, textarea.value.length);
+}
+
+function cancelInlineEdit(btnElement) {
+    const wrapper = btnElement.closest('.user-wrapper');
+    const staticView = wrapper.querySelector('.static-msg-view');
+    const editView = wrapper.querySelector('.edit-msg-view');
+    const textarea = editView.querySelector('.inline-edit-textarea');
+    const originalText = staticView.querySelector('.user-text-content').innerText;
+
+    textarea.value = originalText;
+    editView.style.display = 'none';
+    staticView.style.display = 'block';
+}
+
+function autoResizeTextarea(textarea) {
+    textarea.style.height = 'auto';
+    textarea.style.height = textarea.scrollHeight + 'px';
+}
+
+async function submitInlineEdit(index, btnElement) {
+    const wrapper = btnElement.closest('.user-wrapper');
+    const editView = wrapper.querySelector('.edit-msg-view');
+    const textarea = editView.querySelector('.inline-edit-textarea');
+    const saveBtn = editView.querySelector('.btn-edit-save');
+    const newText = textarea.value.trim();
+
+    if (!newText) {
+        alert('Pesan tidak boleh kosong');
+        return;
+    }
+
+    const originalBtnText = saveBtn.innerHTML;
+    saveBtn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i>';
+    saveBtn.disabled = true;
+
+    try {
+        const response = await fetch('/api/truncate_chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ chat_index: parseInt(index) })
+        });
+
+        if (response.ok) {
+            const allUserWrappers = document.querySelectorAll('.user-wrapper');
+            const allAiWrappers = document.querySelectorAll('.ai-wrapper');
+            
+            for (let i = index; i < allUserWrappers.length; i++) {
+                if (allUserWrappers[i]) allUserWrappers[i].remove();
+                if (allAiWrappers[i]) allAiWrappers[i].remove();
+            }
+
+            const messageInput = document.getElementById('messageInput');
+            if (messageInput) {
+                messageInput.value = newText;
+                
+                const chatForm = document.getElementById('chatForm');
+                if (chatForm) {
+                    const submitEvent = new Event('submit', { cancelable: true, bubbles: true });
+                    chatForm.dispatchEvent(submitEvent);
+                }
+            }
+        } else {
+            console.error("Gagal memotong chat di server.");
+            saveBtn.innerHTML = originalBtnText;
+            saveBtn.disabled = false;
+        }
+    } catch (error) {
+        console.error("Terjadi kesalahan jaringan:", error);
+        saveBtn.innerHTML = originalBtnText;
+        saveBtn.disabled = false;
+    }
+}
+
+function toggleChatMenu(event, sessionId) {
+    event.preventDefault(); 
+    event.stopPropagation(); 
+    
+    document.querySelectorAll('.chat-options-menu').forEach(menu => {
+        if (menu.id !== 'menu-' + sessionId) {
+            menu.classList.remove('show');
+        }
+    });
+
+    const targetMenu = document.getElementById('menu-' + sessionId);
+    if (targetMenu) {
+        targetMenu.classList.toggle('show');
+    }
+}
+
+window.addEventListener('click', function(event) {
+    if (!event.target.closest('.chat-item-options')) {
+        document.querySelectorAll('.chat-options-menu').forEach(menu => {
+            menu.classList.remove('show');
         });
     }
 });

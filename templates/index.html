@@ -70,35 +70,43 @@
         </div>
 
         {% endif %}
-        <form action="/delete_multiple" method="POST" id="bulkDeleteForm" class="sidebar-form">
-            <div class="sidebar-section-title">Terbaru</div>
-            <div id="bottom-of-chat"></div>
-            
-            <ul class="sidebar-menu">
-                {% if sessions|length == 0 %}
-                    <li class="empty-state">Belum ada obrolan</li>
-                {% endif %}
+            <div class="sidebar-form">
+    <div class="sidebar-section-title">Terbaru</div>
+    
+    <ul class="sidebar-menu">
+        {% if sessions|length == 0 %}
+            <li class="empty-state">Belum ada obrolan</li>
+        {% endif %}
 
-                {% for session in sessions %}
-                    <li title="{{ session.title }}" class="{% if session.id == active_session_id %}active-session{% endif %}">
-                        <div class="sidebar-item-layout">
-                            <input type="checkbox" name="selected_chats" value="{{ session.id }}" class="chat-checkbox">
-                            
-                            <a href="/switch_chat/{{ session.id }}" class="sidebar-text" style="text-decoration: none; color: inherit; flex: 1;">
-                                <i class="far fa-comment-alt"></i> 
-                                <span>{{ session.title }}</span>
-                            </a>
+        {% for session in sessions %}
+            <li title="{{ session.title }}" class="chat-history-item {% if session.id == active_session_id %}active-session{% endif %}">
+                <div class="sidebar-item-layout">
+                    
+                    <a href="/switch_chat/{{ session.id }}" class="sidebar-text" style="text-decoration: none; color: inherit; flex: 1;">
+                        <i class="far fa-comment-alt"></i> 
+                        <span>{{ session.title }}</span>
+                    </a>
+                    
+                    <div class="chat-item-options">
+                        <button type="button" class="btn-options-toggle" onclick="toggleChatMenu(event, '{{ session.id }}')">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
+                        
+                        <div class="chat-options-menu" id="menu-{{ session.id }}">
+                            <form action="/delete_multiple" method="POST" style="margin: 0;">
+                                <input type="hidden" name="selected_chats" value="{{ session.id }}">
+                                <button type="submit" class="menu-action-btn delete-action">
+                                    <i class="fas fa-trash-alt"></i> Hapus
+                                </button>
+                            </form>
                         </div>
-                    </li>
-                {% endfor %}
-            </ul>
-
-            {% if sessions|length > 0 %}
-                <button type="submit" class="btn-bulk-delete" title="Hapus obrolan terpilih">
-                    <i class="fas fa-trash-alt"></i> Hapus
-                </button>
-            {% endif %}
-        </form>
+                    </div>
+                    
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
 
         <div class="sidebar-footer">
             <div class="user-profile" style="justify-content: space-between; width: 100%;">
@@ -120,6 +128,14 @@
         </div>
 
     </aside>
+
+    <script>
+        const sidebarEl = document.querySelector('.sidebar');
+        const savedScroll = sessionStorage.getItem('sidebarScrollPosition');
+        if (sidebarEl && savedScroll !== null) {
+            sidebarEl.scrollTop = parseInt(savedScroll, 10);
+        }
+    </script>
 
     <main class="main-content">
         
@@ -154,12 +170,24 @@
             <div id="chat-history-container" class="chat-history-container">
                 
                 {% for chat in chat_history %}
-                    <div class="chat-wrapper user-wrapper">
-                        <div class="chat-message user-message">
+                    <div class="chat-wrapper user-wrapper" style="flex-direction: column; align-items: flex-end;">
+                        <div class="chat-message user-message static-msg-view">
                             {% if chat.image %}
                                 <img src="data:{{ chat.image_mime or 'image/jpeg' }};base64,{{ chat.image }}" alt="User Upload" class="chat-img">
                             {% endif %}
-                            {{ chat.user }}
+                            <span class="user-text-content">{{ chat.user }}</span>
+                            
+                            <button onclick="showInlineEdit(this)" class="edit-msg-btn" title="Edit pesan">
+                                <i class="fas fa-pencil-alt"></i>
+                            </button>
+                        </div>
+
+                        <div class="inline-edit-container edit-msg-view" style="display: none;">
+                            <textarea class="inline-edit-textarea" oninput="autoResizeTextarea(this)">{{ chat.user }}</textarea>
+                            <div class="inline-edit-actions">
+                                <button type="button" class="btn-edit-cancel" onclick="cancelInlineEdit(this)">Batal</button>
+                                <button type="button" class="btn-edit-save" onclick="submitInlineEdit('{{ loop.index0 }}', this)">Kirim</button>
+                            </div>
                         </div>
                     </div>
                     
