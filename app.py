@@ -186,6 +186,42 @@ def extract_text_preferences(user_query):
         print(f"⚠️ Error saat ekstraksi preferensi teks: {e}")
         return None
 
+class BaseAIAgent:
+    """Konsep Class: Menjadi blueprint dasar untuk semua agent AI."""
+    
+    def __init__(self, model_name="gpt-4o-mini"):
+        self.__model_name = model_name
+        self.__base_instruction = "Kamu adalah 'AI Agents UI', asisten belanja AI."
+
+    def get_model_name(self):
+        return self.__model_name
+
+    def get_base_instruction(self):
+        return self.__base_instruction
+
+    def get_specific_instruction(self):
+        return "TUGAS: General Chat. Jawab sapaan atau pertanyaan umum pengguna dengan ramah, santai, dan natural."
+
+class ExtractiveAgent(BaseAIAgent):
+    def get_specific_instruction(self):
+        return "TUGAS: Extractive Summarization. Ekstrak spesifikasi teknis mentah. Wajib format bullet points (<ul><li>) atau TABEL HTML (<table>) jika data spesifikasi cukup padat."
+
+class AbstractiveAgent(BaseAIAgent):
+    def get_specific_instruction(self):
+        return "TUGAS: Abstractive Summarization. Buat ringkasan naratif SANGAT SINGKAT. Maksimal 2 kalimat."
+
+class ComparativeAgent(BaseAIAgent):
+    def get_specific_instruction(self):
+        return "TUGAS: Comparative Summarization. Bandingkan produk secara terstruktur. Soroti 'Kelebihan' & 'Kekurangan'. Gunakan format TABEL HTML (<table>)."
+
+class RecommendationAgent(BaseAIAgent):
+    def get_specific_instruction(self):
+        return "TUGAS: Recommendation. Berikan 2-3 rekomendasi produk yang PALING COCOK berdasarkan preferensi. WAJIB sertakan poin '💡 Mengapa cocok untukmu'."
+
+class WhatIfAgent(BaseAIAgent):
+    def get_specific_instruction(self):
+        return "TUGAS: What-If Scenario. Sesuaikan rekomendasi produk SEPENUHNYA berdasarkan skenario hipotetis pengguna."
+
 def ask_ai(user_query, product_data, history, user_image_bytes, summary_algo, preferences, file_text_content=""):
     if not client:
         return "Sistem belum terintegrasi dengan API Key OpenAI.", True
@@ -207,19 +243,21 @@ def ask_ai(user_query, product_data, history, user_image_bytes, summary_algo, pr
     recent_history = history[-3:] if len(history) > 3 else history
     history_text = "\n".join([f"U:{chat['user']}\nA:{chat['ai']}" for chat in recent_history])
 
-    algo_instruction = ""
+    agent = None
     if summary_algo == 'extractive':
-        algo_instruction = "TUGAS: Extractive Summarization. Ekstrak spesifikasi teknis mentah. Wajib format bullet points (<ul><li>) atau TABEL HTML (<table>) jika data spesifikasi cukup padat.."
+        agent = ExtractiveAgent()
     elif summary_algo == 'abstractive':
-        algo_instruction = "TUGAS: Abstractive Summarization. Buat ringkasan naratif SANGAT SINGKAT. Maksimal 2 kalimat."
+        agent = AbstractiveAgent()
     elif summary_algo == 'comparative':
-        algo_instruction = "TUGAS: Comparative Summarization. Bandingkan produk secara terstruktur. Soroti 'Kelebihan' & 'Kekurangan'. \n\nATURAN WAJIB PERBANDINGAN:\n1. FILTER DATA: Analisis permintaan pengguna (misal meminta 'laptop'), lalu HANYA cari dan bandingkan produk di [Data Produk] yang sesuai dengan kata kunci tersebut.\n2. JANGAN asal membandingkan produk dari urutan teratas jika tidak relevan dengan permintaan pengguna.\n3. Kamu SANGAT DISARANKAN menggunakan format TABEL HTML (<table>) untuk membandingkan spesifikasi, harga, kelebihan, atau kekurangan antar-produk yang RELEVAN agar terlihat rapi dan modular."
+        agent = ComparativeAgent()
     elif summary_algo == 'recommendation':
-        algo_instruction = "TUGAS: Recommendation. Berikan 2-3 rekomendasi produk yang PALING COCOK berdasarkan '[Preferensi User Saat Ini]' atau permintaan spesifiknya di prompt. WAJIB sertakan poin '💡 Mengapa cocok untukmu' pada setiap produk, 'Kelebihan', dan 'Kekurangan' menggunakan format list HTML (<ul><li>) yang rapi atau tabel perbandingan di akhir jika diperlukan."
+        agent = RecommendationAgent()
     elif summary_algo == 'what_if':
-        algo_instruction = "TUGAS: What-If Scenario (Skenario Hipotetis). Pengguna akan memberikan skenario pengandaian (misalnya: 'tampilkan alternatif jika budget di bawah 50rb', 'bagaimana jika saya butuh untuk gaming', atau 'tampilkan merek selain yang saya suka'). \n\nATURAN WAJIB WHAT-IF:\n1. Sesuaikan rekomendasi produk SEPENUHNYA berdasarkan skenario hipotetis pengguna.\n2. Abaikan sementara preferensi budget/merek utama pengguna JIKA bertentangan dengan skenario yang diminta.\n3. Berikan 2-3 alternatif produk yang sesuai dengan skenario baru, dan jelaskan mengapa ini merupakan alternatif yang bagus menggunakan format list HTML (<ul><li>)."
-    elif summary_algo == 'general':
-        algo_instruction = "TUGAS: General Chat. Jawab sapaan atau pertanyaan umum pengguna dengan ramah, santai, dan natural. Jika pengguna tidak menanyakan produk, jangan paksakan format rekomendasi atau tabel. Cukup jawab layaknya asisten yang siap membantu."
+        agent = WhatIfAgent()
+    else:
+        agent = BaseAIAgent()
+
+    algo_instruction = agent.get_specific_instruction()
 
     merek_str = ", ".join(preferences["merek_favorit"]) if preferences["merek_favorit"] else "Belum diketahui"
     minat_str = ", ".join(preferences["kategori_minat"]) if preferences["kategori_minat"] else "Belum diketahui"

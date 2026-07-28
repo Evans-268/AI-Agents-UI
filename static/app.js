@@ -502,8 +502,15 @@ function showInlineEdit(btnElement) {
     const staticView = wrapper.querySelector('.static-msg-view');
     const editView = wrapper.querySelector('.edit-msg-view');
     const textarea = editView.querySelector('.inline-edit-textarea');
+    
+    const actionButtons = wrapper.querySelector('.user-action-buttons');
 
     staticView.style.display = 'none';
+    
+    if (actionButtons) {
+        actionButtons.style.display = 'none';
+    }
+
     editView.style.display = 'block';
     
     autoResizeTextarea(textarea);
@@ -517,11 +524,20 @@ function cancelInlineEdit(btnElement) {
     const staticView = wrapper.querySelector('.static-msg-view');
     const editView = wrapper.querySelector('.edit-msg-view');
     const textarea = editView.querySelector('.inline-edit-textarea');
+    
+    const actionButtons = wrapper.querySelector('.user-action-buttons');
+    
     const originalText = staticView.querySelector('.user-text-content').innerText;
 
     textarea.value = originalText;
+    
     editView.style.display = 'none';
-    staticView.style.display = 'block';
+    
+    staticView.style.display = 'flex';
+    
+    if (actionButtons) {
+        actionButtons.style.display = 'flex'; 
+    }
 }
 
 function autoResizeTextarea(textarea) {
@@ -580,6 +596,32 @@ async function submitInlineEdit(index, btnElement) {
         console.error("Terjadi kesalahan jaringan:", error);
         saveBtn.innerHTML = originalBtnText;
         saveBtn.disabled = false;
+    }
+}
+
+async function copyToClipboard(btnElement) {
+    const wrapper = btnElement.closest('.user-wrapper');
+    const messageElement = wrapper.querySelector('.user-text-content');
+    const text = messageElement.innerText;
+
+    try {
+        
+        await navigator.clipboard.writeText(text);
+        
+        const icon = btnElement.querySelector('i');
+        const originalClass = icon.className; 
+
+        icon.className = 'fas fa-check'; 
+        icon.style.color = '#4CAF50'; 
+
+        setTimeout(() => {
+            icon.className = originalClass;
+            icon.style.color = '';
+        }, 2000);
+
+    } catch (err) {
+        console.error('Gagal menyalin:', err);
+        alert('Gagal menyalin pesan ke papan klip.');
     }
 }
 

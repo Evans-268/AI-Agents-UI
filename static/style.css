@@ -427,31 +427,46 @@ body.sidebar-closed #toggleSidebarBtn i {
     position: relative; 
 }
 
-.edit-msg-btn {
-    position: absolute;
-    bottom: -15px; 
-    right: -10px;
-    
-    background: var(--bg-sidebar);
-    color: var(--text-secondary);
-    border: 1px solid var(--hover-bg);
-    border-radius: 50%;
-    width: 28px;
-    height: 28px;
-    font-size: 12px;
-    cursor: pointer;
-    display: none; 
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+.user-action-buttons {
+    display: flex;        
+    gap: 15px;            
+    margin-top: 6px;      
+    margin-right: 12px;   
+    opacity: 0;           
+    visibility: hidden;  
+    min-height: 20px;     
+    transition: opacity 0.2s ease, visibility 0.2s ease; 
 }
 
-.user-message:hover .edit-msg-btn {
+.static-msg-view:hover .user-action-buttons {
+    opacity: 1;        
+    visibility: visible;
+}
+
+.action-btn {
+    background: transparent;
+    color: var(--text-secondary);
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+}
+
+.action-btn:hover {
+    color: var(--accent-color);
+}
+
+.user-message:hover .edit-msg-btn,
+.user-message:hover .copy-msg-btn {
     display: flex; 
 }
 
-.edit-msg-btn:hover {
+.edit-msg-btn:hover,
+.copy-msg-btn:hover {
     color: var(--accent-color);
     border-color: var(--accent-color);
 }
@@ -459,7 +474,7 @@ body.sidebar-closed #toggleSidebarBtn i {
 .inline-edit-container {
     width: 100%;
     max-width: 80%;
-    background-color: var(--bg-sidebar); /* Warna kotak sesuai dark mode */
+    background-color: var(--bg-sidebar);
     padding: 15px 20px;
     border-radius: 20px;
     border: 1px solid var(--hover-bg);

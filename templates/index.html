@@ -189,16 +189,26 @@
                 
                 {% for chat in chat_history %}
                     <div class="chat-wrapper user-wrapper" style="flex-direction: column; align-items: flex-end;">
-                        <div class="chat-message user-message static-msg-view">
+                        <div class="static-msg-view" style="display: flex; flex-direction: column; align-items: flex-end; width: 100%;">
+    
+                        <div class="chat-message user-message">
                             {% if chat.image %}
                                 <img src="data:{{ chat.image_mime or 'image/jpeg' }};base64,{{ chat.image }}" alt="User Upload" class="chat-img">
                             {% endif %}
                             <span class="user-text-content">{{ chat.user }}</span>
+                        </div>
+
+                        <div class="user-action-buttons">
+                            <button onclick="copyToClipboard(this)" class="action-btn" title="Salin pesan">
+                                <i class="far fa-copy"></i>
+                            </button>
                             
-                            <button onclick="showInlineEdit(this)" class="edit-msg-btn" title="Edit pesan">
+                            <button onclick="showInlineEdit(this)" class="action-btn" title="Edit pesan">
                                 <i class="fas fa-pencil-alt"></i>
                             </button>
                         </div>
+
+                    </div>
 
                         <div class="inline-edit-container edit-msg-view" style="display: none;">
                             <textarea class="inline-edit-textarea" oninput="autoResizeTextarea(this)">{{ chat.user }}</textarea>
