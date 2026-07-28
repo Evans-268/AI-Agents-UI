@@ -11,46 +11,53 @@ import json
 import os   
 from dotenv import load_dotenv 
 from pyngrok import ngrok 
+from pymongo import MongoClient
 
 server = Flask(__name__)
 
 load_dotenv()
 
 server.secret_key = uuid.uuid4().hex
-USERS_FILE = "users.json" 
+
+MONGO_URI = os.getenv("MONGO_URI")
+client = MongoClient(MONGO_URI)
+db = client['ai_shopping_assistant'] 
+users_collection = db['users']       
+chats_collection = db['chats']
 
 def load_users():
-    """Fungsi untuk membaca data user dari file users.json"""
-    if not os.path.exists(USERS_FILE):
-        users_json = {}
-        with open(USERS_FILE, 'w') as f:
-            json.dump(users_json, f, indent=4)
-        return users_json
-    
-    with open(USERS_FILE, 'r') as f:
-        return json.load(f)
+    """Mengambil semua user dari MongoDB dan mengubahnya ke format dictionary seperti file JSON lama."""
+    users_data = {}
+    for user in users_collection.find():
+        email = user.get("email")
+        users_data[email] = {
+            "password": user.get("password"),
+            "name": user.get("name")
+        }
+    return users_data
 
 def save_users(users_data):
-    """Fungsi untuk menyimpan data user baru ke dalam file users.json"""
-    with open(USERS_FILE, 'w') as f:
-        json.dump(users_data, f, indent=4)
-
-CHAT_FILE = "chat_history.json"
+    """Menyimpan atau memperbarui data user ke MongoDB."""
+    for email, data in users_data.items():
+        users_collection.update_one(
+            {"email": email}, 
+            {"$set": {"email": email, "password": data["password"], "name": data["name"]}}, 
+            upsert=True 
+        )
 
 def load_chat_sessions():
-    """Fungsi untuk membaca riwayat obrolan dari file JSON."""
-    if not os.path.exists(CHAT_FILE):
-        return []
-    try:
-        with open(CHAT_FILE, 'r') as f:
-            return json.load(f)
-    except json.JSONDecodeError:
-        return []
+    """Mengambil riwayat obrolan dari MongoDB."""
+    sessions = list(chats_collection.find({}, {"_id": 0}))
+    return sessions if sessions else []
 
 def save_chat_sessions(sessions):
-    """Fungsi untuk menyimpan seluruh obrolan secara permanen ke file JSON."""
-    with open(CHAT_FILE, 'w') as f:
-        json.dump(sessions, f, indent=4)
+    """Menyimpan riwayat obrolan ke MongoDB."""
+    for session_data in sessions:
+        chats_collection.update_one(
+            {"id": session_data["id"]}, 
+            {"$set": session_data}, 
+            upsert=True 
+        )
 
 def login_required(f):
     @wraps(f)
