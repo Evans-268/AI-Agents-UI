@@ -295,7 +295,7 @@ ATURAN KETAT:
    <div style="margin-top: 15px; margin-bottom: 25px;">
        <span style="color: var(--text-secondary); font-size: 14px;">Silakan selesaikan pembayaran Anda melalui tautan berikut:</span><br>
        <a href="#" onclick="event.preventDefault(); openPaymentModal('[Nama Produk]', '[Harga Produk]')" style="color: var(--accent-color); text-decoration: underline; text-underline-offset: 3px; font-weight: 500; cursor: pointer; font-size: 15px; display: inline-flex; align-items: center; gap: 6px; margin-top: 8px;">
-           <i class="fas fa-link"></i> Menuju Link Pembayaran
+           <i class="fas fa-link"></i> Link Pembayaran
        </a>
    </div>
    
