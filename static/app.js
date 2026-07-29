@@ -729,3 +729,23 @@ window.addEventListener('click', function(event) {
         closePaymentModal();
     }
 });
+
+function searchChatHistory() {
+    const searchInput = document.getElementById('chatSearchInput').value.toLowerCase();
+    
+    const chatItems = document.querySelectorAll('.chat-history-item');
+    
+    chatItems.forEach(function(item) {
+        const titleSpan = item.querySelector('.sidebar-text span');
+        
+        if (titleSpan) {
+            const titleText = titleSpan.textContent.toLowerCase();
+            
+            if (titleText.includes(searchInput)) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        }
+    });
+}

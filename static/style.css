@@ -155,6 +155,40 @@ body.sidebar-closed #toggleSidebarBtn i {
     border-color: var(--text-secondary);
 }
 
+.sidebar-search {
+    padding: 0 20px;
+    margin-bottom: 10px;
+}
+
+.sidebar-search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-search-icon {
+    position: absolute;
+    left: 15px;
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+.sidebar-search-input {
+    width: 100%;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    border: 1px solid var(--hover-bg);
+    padding: 10px 15px 10px 35px;
+    border-radius: 20px;
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.sidebar-search-input:focus {
+    border-color: var(--accent-color);
+}
+
 .sidebar-form {
     display: flex;
     flex-direction: column;

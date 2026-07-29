@@ -29,6 +29,13 @@
         <a href="/new_chat" class="btn-new-chat" title="Mulai obrolan baru">
             <i class="fas fa-plus"></i> Percakapan baru
         </a>
+
+        <div class="sidebar-search">
+            <div class="sidebar-search-wrapper">
+                <i class="fas fa-search sidebar-search-icon"></i>
+                <input type="text" id="chatSearchInput" class="sidebar-search-input" placeholder="Cari riwayat obrolan..." onkeyup="searchChatHistory()">
+            </div>
+        </div>
         
         {% if prefs %}
         <div class="sidebar-section-title">Preferensi Terdeteksi</div>
@@ -70,9 +77,9 @@
         </div>
 
         {% endif %}
-            <div class="sidebar-form">
-    <div class="sidebar-section-title">Terbaru</div>
-    
+    <div class="sidebar-form">
+        <div class="sidebar-section-title">Terbaru</div>
+
     <ul class="sidebar-menu">
         {% if sessions|length == 0 %}
             <li class="empty-state">Belum ada obrolan</li>

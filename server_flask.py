@@ -12,6 +12,7 @@ import os
 from dotenv import load_dotenv 
 from pyngrok import ngrok 
 from pymongo import MongoClient
+import certifi
 
 server = Flask(__name__)
 
@@ -20,7 +21,8 @@ load_dotenv()
 server.secret_key = uuid.uuid4().hex
 
 MONGO_URI = os.getenv("MONGO_URI")
-client = MongoClient(MONGO_URI)
+client = MongoClient(MONGO_URI, tlsCAFile=certifi.where()) 
+
 db = client['ai_shopping_assistant'] 
 users_collection = db['users']       
 chats_collection = db['chats']
@@ -28,13 +30,17 @@ chats_collection = db['chats']
 def load_users():
     """Mengambil semua user dari MongoDB dan mengubahnya ke format dictionary seperti file JSON lama."""
     users_data = {}
-    for user in users_collection.find():
-        email = user.get("email")
-        users_data[email] = {
-            "password": user.get("password"),
-            "name": user.get("name")
-        }
-    return users_data
+    try:
+        for user in users_collection.find():
+            email = user.get("email")
+            users_data[email] = {
+                "password": user.get("password"),
+                "name": user.get("name")
+            }
+        return users_data
+    except Exception as e:
+            print(f"⚠️ Gagal mengambil data user dari database: {e}")
+            return {}
 
 def save_users(users_data):
     """Menyimpan atau memperbarui data user ke MongoDB."""
@@ -46,9 +52,13 @@ def save_users(users_data):
         )
 
 def load_chat_sessions():
-    """Mengambil riwayat obrolan dari MongoDB."""
-    sessions = list(chats_collection.find({}, {"_id": 0}))
-    return sessions if sessions else []
+    """Mengambil riwayat obrolan dari MongoDB dengan penanganan error."""
+    try:
+        sessions = list(chats_collection.find({}, {"_id": 0}))
+        return sessions if sessions else []
+    except Exception as e:
+        print(f"Error loading chat sessions: {e}")
+        return []
 
 def save_chat_sessions(sessions):
     """Menyimpan riwayat obrolan ke MongoDB."""
