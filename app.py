@@ -6,15 +6,21 @@ import markdown
 import jsonschema
 import re
 import io  
+import torch
 from openai import OpenAI
 from dotenv import load_dotenv
+from transformers import pipeline
 from PIL import Image 
 
 load_dotenv() 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+HF_API_KEY = os.getenv("HUGGINGFACE_API_KEY")
 
-if OPENAI_API_KEY:
-    client = OpenAI(api_key=OPENAI_API_KEY)
+if HF_API_KEY:
+    client = OpenAI(
+        base_url="https://router.huggingface.co/v1",
+        api_key=HF_API_KEY,
+        timeout=60.0
+    )
 else:
     client = None
 
@@ -34,7 +40,6 @@ def resize_image_and_encode_base64(image_source, max_size=(512, 512), quality=85
         if isinstance(image_source, bytes):
             img = Image.open(io.BytesIO(image_source))
         else:
-            # Jika sumber adalah path string
             if not os.path.exists(image_source):
                 return None
             img = Image.open(image_source)
@@ -110,7 +115,6 @@ def load_products(filepath="products.json", schema_path="product_schema.json"):
             if os.path.exists(schema_path):
                 with open(schema_path, 'r') as schema_file:
                     schema = json.load(schema_file)
-                # Mengecek apakah 'data' sesuai dengan 'schema'
                 jsonschema.validate(instance=data, schema=schema)
                 print("✅ Data JSON valid sesuai schema!")
             else:
@@ -133,7 +137,7 @@ def extract_image_features(image_base64):
     try:
         print("🔍 Memulai proses Image Feature Extraction...")
         response = client.chat.completions.create(
-            model="gpt-4o-mini",
+            model="openai/gpt-oss-120b",
             response_format={"type": "json_object"}, 
             messages=[
                 {
@@ -165,7 +169,7 @@ def extract_text_preferences(user_query):
         
     try:
         response = client.chat.completions.create(
-            model="gpt-4o-mini",
+            model="openai/gpt-oss-120b",
             response_format={"type": "json_object"}, 
             messages=[
                 {
@@ -189,7 +193,7 @@ def extract_text_preferences(user_query):
 class BaseAIAgent:
     """Konsep Class: Menjadi blueprint dasar untuk semua agent AI."""
     
-    def __init__(self, model_name="gpt-4o-mini"):
+    def __init__(self, model_name="openai/gpt-oss-120b"):
         self.__model_name = model_name
         self.__base_instruction = "Kamu adalah 'AI Agents UI', asisten belanja AI."
 
@@ -224,7 +228,7 @@ class WhatIfAgent(BaseAIAgent):
 
 def ask_ai(user_query, product_data, history, user_image_bytes, summary_algo, preferences, file_text_content=""):
     if not client:
-        return "Sistem belum terintegrasi dengan API Key OpenAI.", True
+        return "Sistem belum terintegrasi dengan API Key Hugging Face.", True
 
     optimized_products = []
     for p in product_data:
@@ -359,7 +363,7 @@ ATURAN KETAT:
                 
     try:
         response = client.chat.completions.create(
-            model="gpt-4o-mini",
+            model="openai/gpt-oss-120b",
             messages=[{"role": "user", "content": content_array}],
             max_tokens=3500,
             temperature=0.3 
@@ -377,5 +381,5 @@ ATURAN KETAT:
         return html_response, False, eval_data 
 
     except Exception as e:
-        print(f"Error OpenAI: {e}")
+        print(f"Error Hugging Face: {e}")
         return "Maaf, kendala teknis AI saat memproses. Pastikan API Key valid.", True, None
